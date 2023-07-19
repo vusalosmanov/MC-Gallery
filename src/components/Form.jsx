@@ -1,5 +1,5 @@
 import React, {  useState } from "react";
-import axios from "axios";
+import Swal from 'sweetalert2'
 function Form() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -8,7 +8,6 @@ function Form() {
   const [notification, setNotification] = useState("");
   const [notificationn, setNotificationn] = useState("");
   const [notificationnn, setNotificationnn] = useState("");
-  const [notificationnnn, setNotificationnnn] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -25,11 +24,20 @@ function Form() {
       setName("");
       setEmail("");
       setLetter("");
-      setNotificationnnn("Form tesdiqlendi");
     }
 
     
   };
+
+  const Alert = () => {
+    Swal.fire({
+      position: 'top-center',
+      icon: 'success',
+      title: 'Form təstiqləndi',
+      showConfirmButton: false,
+      timer: 1500
+    })
+  }
 
   return (
     <div>
@@ -84,13 +92,12 @@ function Form() {
           <button
             type="submit"
             className="border-[1px] p-[6px] bg-[#f15803] text-white mt-[-16px]"
-            // onClick={sendData}
+            onClick={Alert}
           >
             Təstiqlə
           </button>
         </div>
       </form>
-      {notificationnnn && <p className="text-center">{notificationnnn}</p>}
     </div>
   );
 }
