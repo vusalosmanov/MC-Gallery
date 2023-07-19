@@ -2,8 +2,9 @@ import { Link } from "react-router-dom";
 import React from "react";
 import "../assets/styles/components/productcar.scss";
 import image from "../assets/images/icon/sale-old.png";
-import "../assets/styles/components/Accordion.scss"
-
+import "../assets/styles/components/Accordion.scss";
+import Swal from "sweetalert2";
+import { useState } from "react";
 export const ProductCard = ({
   id,
   productName,
@@ -13,6 +14,23 @@ export const ProductCard = ({
   onClick,
   quantity,
 }) => {
+  const [isButtonClicked, setButtonClicked] = useState(false);
+
+  const Alert = () => {
+    Swal.fire({
+      position: "top-center",
+      icon: "success",
+      title: "Səbətə əlavə olundu",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  };
+
+  const handleButtonClick = () => {
+    setButtonClicked(true);
+    onClick();
+    Alert();
+  };
   return (
     <div className="sliderproduct_main flex justify-center items-center   ">
       <div className="sliderproduct_main2 flex flex-col items-center w-[204px] h-[298px] gap-8 ">
@@ -70,7 +88,7 @@ export const ProductCard = ({
 
           <div className="overlay_button hidden ">
             <button
-              onClick={onClick}
+               onClick={handleButtonClick}
               className="px-4 py-1 bg-[black] rounded-none text-white "
             >
               Səbətə əlavə et

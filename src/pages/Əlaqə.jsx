@@ -62,7 +62,6 @@ const Əlaqə = () => {
         <div className="border-[1px] mt-[50px] mb-[40px]">
           <Swiperss />
         </div>
-
     </div>
   );
 };

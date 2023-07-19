@@ -1,7 +1,7 @@
 import React from "react";
-import { AiFillCaretRight } from "react-icons/ai";
+import { useState } from "react";
 import "../assets/styles/components/productcar.scss";
-
+import Swal from "sweetalert2";
 export const ProductCard = ({
   id,
   brend,
@@ -17,6 +17,27 @@ export const ProductCard = ({
   delQtyBtn = false,
 }) => {
   const sumprice = price * quantity;
+
+  const [isButtonClicked, setButtonClicked] = useState(false);
+
+  const handleButtonClick = () => {
+    setButtonClicked(true);
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        onClick();
+      } else {
+        setButtonClicked(false);
+      }
+    });
+  };
 
   return (
     <>
@@ -51,10 +72,11 @@ export const ProductCard = ({
                 <span className="border-[1px]">{quantity}</span>
                 {addQtyBtn && <button onClick={onAddQty}>+</button>}
                 {delQtyBtn && <button onClick={onDeleteQty}>-</button>}
-                {showDeleteButton && <button onClick={onClick}>X</button>}
+                {showDeleteButton && <button onClick={handleButtonClick}>
+                {isButtonClicked ? "Confirm Delete" : "X"}</button>}
               </div>
             </th>
-            <th className="border-[1px] p-[15px]">
+            <th className="border-[1px] p-[20px]">
               <p>{price}</p>
             </th>
             <th className="p-[15px]">
@@ -90,7 +112,8 @@ export const ProductCard = ({
                 <span className="border-[1px]">{quantity}</span>
                 {addQtyBtn && <button onClick={onAddQty}>+</button>}
                 {delQtyBtn && <button onClick={onDeleteQty}>-</button>}
-                {showDeleteButton && <button onClick={onClick}>X</button>}
+                {showDeleteButton && <button onClick={handleButtonClick}>
+                {isButtonClicked ? "Confirm Delete" : "X"}</button>}
               </div>
             </th>
           </tr>

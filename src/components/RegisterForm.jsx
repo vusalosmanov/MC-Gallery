@@ -1,5 +1,5 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
+import Swal from "sweetalert2";
 
 const RegisterForm = () => {
   const [name, setName] = useState("");
@@ -7,6 +7,7 @@ const RegisterForm = () => {
   const [email, setEmail] = useState("");
   const [number, setNumber] = useState("");
   const [location, setLocation] = useState("");
+  const [country, setCountry] = useState("");
   const [notification, setNotification] = useState("");
   const [notificationn, setNotificationn] = useState("");
   const [notificationnn, setNotificationnn] = useState("");
@@ -16,6 +17,12 @@ const RegisterForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setNotification("");
+    setNotificationn("");
+    setNotificationnn("");
+    setNotificationnnn("");
+    setNotificationnnnn("");
+
     if (!name) {
       setNotification("Adınız 3 ilə 32 simvol arasında olmalıdır!");
     }
@@ -31,15 +38,32 @@ const RegisterForm = () => {
     }
     if (!location) {
       setNotificationnnnn("Ünvan 3 ilə 128 simvol arası olmalıdır!");
-    } else {
+    }
+    if (!country) {
+      setNotificationnnnnn("Ölkəni seçin!");
+    }
+
+    if (name && surname && email && number && location && country) {
       setName("");
       setsurName("");
       setEmail("");
       setNumber("");
       setLocation("");
-      setNotificationnnnnn("Form tesdiqlendi");
+      setCountry("");
+      Alert();
     }
   };
+
+  const Alert = () => {
+    Swal.fire({
+      position: "top-center",
+      icon: "success",
+      title: "Form təstiqləndi",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  };
+
   return (
     <div>
       <form onSubmit={handleSubmit} className="pt-[30px] ">
@@ -62,12 +86,12 @@ const RegisterForm = () => {
           )}
         </div>
         <div className="mb-[15px] text-right">
-          <label htmlFor="name">* Soyad </label>
+          <label htmlFor="surname">* Soyad </label>
           <input
             type="text"
-            id="name"
+            id="surname"
             value={surname}
-            onChange={(e) => setName(e.target.value)}
+            onChange={(e) => setsurName(e.target.value)}
             className="border-[1px] w-[83%] h-[40px] focus:outline-none pl-[10px]"
             placeholder="Soyad"
           />
@@ -96,10 +120,10 @@ const RegisterForm = () => {
         <div className="mb-[15px] text-right">
           <label htmlFor="number">*Telefon </label>
           <input
-            type="number"
+            type="text"
             id="number"
             value={number}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => setNumber(e.target.value)}
             className="border-[1px] w-[83%] h-[40px] focus:outline-none p-[10px]"
             placeholder="Telefon"
           />
@@ -110,18 +134,17 @@ const RegisterForm = () => {
           )}
         </div>
       </form>
-      {notificationnnnnn && <p className="text-center">{notificationnnnnn}</p>}
 
       <form onSubmit={handleSubmit}>
         <h1 className="pb-[20px]">Ünvan</h1>
         <hr />
         <div className="mb-[15px] text-right mt-[20px]">
-          <label htmlFor="text">* Ünvan </label>
+          <label htmlFor="location">* Ünvan </label>
           <input
             type="text"
-            id="text"
+            id="location"
             value={location}
-            onChange={(e) => setName(e.target.value)}
+            onChange={(e) => setLocation(e.target.value)}
             className="border-[1px] w-[83%] h-[40px] focus:outline-none pl-[10px]"
             placeholder="Ünvan"
           />
@@ -132,20 +155,28 @@ const RegisterForm = () => {
           )}
         </div>
         <div className="mb-[15px] text-right mt-[20px]">
-          <label htmlFor="text">* Şəhər </label>
+          <label htmlFor="country">* Şəhər </label>
           <input
             type="text"
-            id="text"
-            onChange={(e) => setName(e.target.value)}
+            id="country"
+            value={country}
+            onChange={(e) => setCountry(e.target.value)}
             className="border-[1px] w-[83%] h-[40px] focus:outline-none pl-[10px]"
             placeholder="Şəhər"
           />
+          {notificationnnnnn && (
+            <p className="text-start ml-[195px] text-[#f15803] text-xs">
+              {notificationnnnnn}
+            </p>
+          )}
         </div>
         <div className="mb-[15px] text-right mt-[20px]">
-          <label htmlFor="text">* Ölkə </label>
+          <label htmlFor="country">* Ölkə </label>
           <select
             id="country"
             name="country"
+            value={country}
+            onChange={(e) => setCountry(e.target.value)}
             className="border-[1px] w-[83%] h-[40px] focus:outline-none text-[#7d7d8d] p-[10px]"
           >
             <option value="Azerbaijan">Azerbaijan</option>
@@ -175,6 +206,7 @@ const RegisterForm = () => {
         </div>
         <div className="w-[100%] flex justify-end mt-[20px]">
           <button
+            onClick={Alert}
             type="submit"
             className="border-[1px] p-[6px] bg-[#f15803] text-white mt-[-16px]"
           >

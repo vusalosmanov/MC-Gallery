@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Shoppraduct from "../components/Shoppraduct";
 import React from "react";
 import { Link } from "react-router-dom";
+import "../assets/styles/components/Accordion.scss";
 
 const Shop = ({}) => {
   const shop = useSelector((state) => state.cartData.cart);
@@ -12,12 +13,17 @@ const Shop = ({}) => {
     <>
       <div className="home">
         {shop.length == 0 ? (
-          <div className="w-[1170px]   my-0 mx-auto  pr-[15px] pl-[15px] flex justify-between items-end">
+          <div className="lg:w-[1170px]  w-full  my-0 mx-auto  pr-[15px] pl-[15px] flex justify-between items-end ">
             <div>
               <h1>Səbət</h1>
+
               <h1>Sizin səbətiniz boşdur!</h1>
             </div>
-            <button  className="border-[1px] p-[6px] bg-[#f15803] text-white mt-[-16px]"><Link to="/home">Davam et</Link></button>
+            <div>
+              <button className="border-[1px] p-[6px] bg-[#f15803] text-white mt-[-16px] ">
+                <Link to="/home">Davam et</Link>
+              </button>
+            </div>
           </div>
         ) : (
           shop.map((item) => {

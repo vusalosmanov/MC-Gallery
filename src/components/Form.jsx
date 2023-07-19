@@ -1,5 +1,6 @@
-import React, {  useState } from "react";
-import Swal from 'sweetalert2'
+import React, { useState, useEffect } from "react";
+import Swal from 'sweetalert2';
+
 function Form() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -8,6 +9,7 @@ function Form() {
   const [notification, setNotification] = useState("");
   const [notificationn, setNotificationn] = useState("");
   const [notificationnn, setNotificationnn] = useState("");
+  const [formSubmitted, setFormSubmitted] = useState(false); 
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -24,10 +26,16 @@ function Form() {
       setName("");
       setEmail("");
       setLetter("");
+      setFormSubmitted(true);
     }
-
-    
   };
+
+  useEffect(() => {
+    if (formSubmitted) {
+      Alert();
+      setFormSubmitted(false);
+    }
+  }, [formSubmitted]);
 
   const Alert = () => {
     Swal.fire({
@@ -36,8 +44,8 @@ function Form() {
       title: 'Form təstiqləndi',
       showConfirmButton: false,
       timer: 1500
-    })
-  }
+    });
+  };
 
   return (
     <div>
@@ -92,7 +100,7 @@ function Form() {
           <button
             type="submit"
             className="border-[1px] p-[6px] bg-[#f15803] text-white mt-[-16px]"
-            onClick={Alert}
+            onClick={handleSubmit}
           >
             Təstiqlə
           </button>

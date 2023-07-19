@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
-
+import Searchcart from "./Searchcart";
 const Input = () => {
   const [products, setProducts] = useState([]);
   const [filteredData, setFilteredData] = useState(products);
@@ -23,6 +23,12 @@ const Input = () => {
     }
   };
 
+  const borderedDivStyle = {
+    maxHeight: "270px",
+    overflowY: "scroll",
+    border: "1px solid #red-800",
+    display: filteredData.length === 0 ? "none" : "block",
+  };
 
   return (
     <>
@@ -58,38 +64,14 @@ const Input = () => {
             placeholder="Axtar..."
             onChange={searchData}
           />
-          {products.length > 0 ? (
-            <ul>
-              {filteredData.map((item) => {
-                return (
-                  <li key={item.id} className="z-[999px]">
-                    <div className="bg-[#fff] flex  p-[10px]  pt-[30px] pb-[30px] h-[190px] items-center z-[9999] absolute border-b-[1px]  ">
-                      <div>
-                        <img
-                          className="w-[100%]  object-cover border-none cursor-pointer"
-                          src={` http://localhost:5000/${item.imageurl}`}
-                          alt="noimg"
-                        />
-                      </div>
-                      <div>
-                        <h3 className="text-[12px] text-[#666] hover:text-[#f15803] mb-[10px] cursor-pointer">
-                          {item.name}
-                        </h3>
-                        <p className="text-[15px] text-[#f15803] font-bold cursor-pointer">
-                          {item.price}
-                        </p>
-                        <p className="text-[14px] text-[#000] line-through cursor-pointer ">
-                          {item.oldprice}
-                        </p>
-                      </div>
-                    </div>
-                  </li>
-                );
-              })}
-            </ul>
-          ) : (
-            ""
-          )}
+          <div
+            style={borderedDivStyle}
+            className="lg:w-[247px]  border-red-800 border  gap-[50px] absolute z-[99999999999] bg-white "
+          >
+            {filteredData.map((item) => (
+              <Searchcart productName={item.name} imageUrl={item.imageurl} />
+            ))}
+          </div>
         </div>
       </div>
     </>
