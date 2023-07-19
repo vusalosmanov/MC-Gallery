@@ -1,0 +1,30 @@
+.sliderproduct_main{
+    transition: all ease 4s;
+    :hover{
+        cursor: pointer;
+       
+            .overlay_for_img{
+                display: block;
+                transition: all ease 0.4s;
+            }
+            .overlay_top{
+                transition: all 0.5s;
+            }
+     
+           .products_text{
+            display: none;
+           }
+
+           .overlay_button{
+            display: block;
+           }
+            img{
+                transition: all ease 0.2s;
+            }
+   
+       
+    }
+    .sliderproduct_img{
+        transition: all ease 1s;
+    }
+}
