@@ -1,22 +1,36 @@
 import React from "react";
+import { Link } from "react-router-dom";
+const Searchcart = ({ productName, imageUrl, price, oldprice, id }) => {
+  return (
+    <div className="border-t-[1px] pb-[5px]">
+      <div className="flex  items-center p-[10px] ">
+        <img
+          className="w-[50%]  object-contain cursor-pointer"
+          src={`http://localhost:5000/${imageUrl}`}
+          alt="noimg"
+          to={`/details/${id}`}
+        />
 
-const Searchcart = ({ productName, imageUrl }) => {
-    return (
-        <div > 
-        <div className="flex flex-col items-center h-[298px] gap-8 ">
-          <div className="w-[184px] h-[184px] flex items-center justify-center relative">
-            <img
-              className="w-[184px] h-[184px] object-cover"
-              src={`http://localhost:5000/${imageUrl}`}
-              alt="noimg"
-            />
-          </div>
-          <div className="products_text flex justify-center items-center flex-col">
-            <p>{productName}</p>
+        <div className="w-[50%]  text-left products_text flex justify-center items-center flex-col">
+          <Link
+            to={`/details/${id}`}
+            className="text-[12px] text-[#666] cursor-pointer hover:text-[#f15803] text-center"
+          >
+            {productName}
+          </Link>
+          <div className="pt-[20px]">
+            <p className="text-[15px] text-[#f15803] text-left cursor-pointer">
+              {price}₼
+            </p>
+            <p className="text-[14px] line-through cursor-pointer ">
+              {oldprice}₼
+            </p>
           </div>
         </div>
+        <div></div>
       </div>
-    );
+    </div>
+  );
 };
 
-export default Searchcart;
+export default Searchcart;

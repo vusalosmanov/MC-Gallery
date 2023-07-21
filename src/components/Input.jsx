@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Searchcart from "./Searchcart";
+import { useTranslation } from "react-i18next";
 const Input = () => {
   const [products, setProducts] = useState([]);
   const [filteredData, setFilteredData] = useState(products);
@@ -28,6 +29,12 @@ const Input = () => {
     overflowY: "scroll",
     border: "1px solid #red-800",
     display: filteredData.length === 0 ? "none" : "block",
+  };
+
+  const { t, i18n } = useTranslation();
+
+  const clickHandle = async (lang) => {
+    await i18n.changeLanguage(lang);
   };
 
   return (
@@ -61,7 +68,7 @@ const Input = () => {
             className="block w-full pt-0 pr-[40px] pl-[40px] pb-0 leading-[41px] text-sm text-gray-900 border border-[#f15803]   focus:ring-[#f15803] focus:border-[#f15803]"
             type="text"
             name="search"
-            placeholder="Axtar..."
+            placeholder={t("search")}
             onChange={searchData}
           />
           <div
@@ -69,7 +76,7 @@ const Input = () => {
             className="lg:w-[247px]  border-red-800 border  gap-[50px] absolute z-[99999999999] bg-white "
           >
             {filteredData.map((item) => (
-              <Searchcart productName={item.name} imageUrl={item.imageurl} />
+              <Searchcart productName={item.name} imageUrl={item.imageurl} price={item.price} oldprice={item.oldprice} id={item.id} />
             ))}
           </div>
         </div>
