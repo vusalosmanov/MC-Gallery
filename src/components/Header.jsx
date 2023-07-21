@@ -66,7 +66,7 @@ const Header = () => {
   const clickHandle = async (lang) => {
     await i18n.changeLanguage(lang);
   };
-git
+  
   return (
     <>
       <header className="block">
