@@ -1,3 +1,4 @@
+
 export const Data = [
     {
       name: "Məişət texnikası",

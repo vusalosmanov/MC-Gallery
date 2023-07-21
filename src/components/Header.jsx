@@ -13,7 +13,7 @@ import image2 from "../assets/images/icon/paltaryuyan.png";
 import Sidebar from "./sidebar";
 import "../assets/styles/components/sidebar.css";
 import "../assets/styles/components/Slick.scss";
-
+import { useTranslation } from "react-i18next";
 const Header = () => {
   const cart = useSelector((state) => state.cartData.cart);
 
@@ -31,11 +31,11 @@ const Header = () => {
 
   const [heading, setHeading] = useState("");
   const [subHeading, setSubHeading] = useState("");
-  
+
   window.onscroll = function() {
     scrollFunction();
   };
-  
+
   function scrollFunction() {
     var navbar = document.getElementById("navbar");
     if (navbar) {
@@ -60,8 +60,12 @@ const Header = () => {
       }
     }
   }
-  
-  
+
+  const { t, i18n } = useTranslation();
+
+  const clickHandle = async (lang) => {
+    await i18n.changeLanguage(lang);
+  };
 
   return (
     <>
@@ -76,7 +80,7 @@ const Header = () => {
                       to="/kampaniyalar"
                       className="py-0 px-2.5 text-sm hover:text-slate-300"
                     >
-                      Kampaniyalar
+                      {t("campaigns")}
                     </Link>
                   </li>
                   <li>
@@ -84,7 +88,7 @@ const Header = () => {
                       to="/brendler"
                       className="py-0 px-2.5 text-sm hover:text-slate-300"
                     >
-                      Brendlər
+                      {t("brands")}
                     </Link>
                   </li>
                   <li>
@@ -92,7 +96,7 @@ const Header = () => {
                       to="/filiallar"
                       className="py-0 px-2.5 text-sm hover:text-slate-300"
                     >
-                      Filiallar
+                      {t("branches")}
                     </Link>
                   </li>
                   <li>
@@ -100,7 +104,7 @@ const Header = () => {
                       to="/əlaqə  "
                       className="py-0 px-2.5 text-sm hover:text-slate-300"
                     >
-                      Əlaqə
+                      {t("connection")}
                     </Link>
                   </li>
                 </ul>
@@ -108,25 +112,44 @@ const Header = () => {
               <div className="hidden lg:block">
                 <ul className="flex items-center">
                   <img src={image1} alt="" className="w-[16px] h-[11px]" />
-                  <Link to="/" className="">
-                    <a href="" className="py-0 px-2.5 text-sm ">
-                      DİL
+                  <div class="dropdown">
+                    <button class="dropbtn" className="py-0 px-3.5 h-4 text-sm">
+                      {t("language")}
                       <i className="fa fa-angle-down"></i>
+                    </button>
+                    <ul class="dropdown-content">
+                      <li>
+                        <button
+                          onClick={() => clickHandle("aze")}
+                          className="h-[30px]"
+                        >
+                          Azərbaycan
+                        </button>
+                      </li>
+                      <li>
+                        <button
+                          onClick={() => clickHandle("en")}
+                          className="h-[30px]"
+                        >
+                          English
+                        </button>
+                      </li>
+                    </ul>
+                  </div>
+                    <a
+                      href="https://hesab.az/unregistered/#/direct-pay/loans/ferrum/parameters"
+                      target="_blank"
+                      className="flex items-center py-0 px-2.5 text-sm "
+                      >
+                  <FaRegMoneyBillAlt className="text-[16px] mr-[5px]" />
+                      {t("loan repayment")}
                     </a>
-                  </Link>
-                  <Link
-                    to="/"
-                    className="flex items-center py-0 px-2.5 text-sm "
-                  >
-                    <FaRegMoneyBillAlt className="text-[16px] mr-[5px]" />
-                    KREDİTİN ÖDƏNİŞİ{" "}
-                  </Link>
                   <Link
                     to="/register"
                     className="flex items-center py-0 px-2.5 text-sm"
                   >
                     <AiFillCheckCircle className="text-[16px] mr-[3px] items-center" />
-                    QEYDİYYAT
+                    {t("registration")}
                   </Link>
                   <Link to="/books" className="flex items-center">
                     <a
@@ -134,7 +157,7 @@ const Header = () => {
                       className="py-0 flex px-2.5 text-sm items-center "
                     >
                       <AiOutlineUser className="text-[16px] mr-[3px]" />
-                      HESABIM
+                      {t("my account")}
                       <i className="fa fa-angle-down ml-[3px]"></i>
                     </a>
                   </Link>
@@ -157,7 +180,7 @@ const Header = () => {
             <div className="w-[150px] lg:block hidden"></div>
             <div className="flex items-center">
               <div className=" w-[247px] h-[40px] lg:block hidden">
-                <Input/>
+                <Input />
               </div>
               <div className="hidden lg:block">
                 <div className="ml-[3em]">
@@ -169,7 +192,7 @@ const Header = () => {
                     </div>
                   </a>
                   <p className="text-[12px] ml-[1em] w-[200px]">
-                    Hər gün 09:00 - 20 : 00
+                    {t("every day")} 09:00 - 20 : 00
                   </p>
                 </div>
               </div>
@@ -223,11 +246,11 @@ const Header = () => {
             <div className="flex text-[12px]  pl-[5px] text-[#3a3a3a] ">
               <Link className="gap-2 lg:block hidden ">
                 {sumQuantity === 0 ? (
-                  <span>Sebet boşdur</span>
+                  <span>{t("the basket is empty")}</span>
                 ) : (
                   <>
                     <span className="text-[black]">
-                      {sumQuantity} Ədəd {sumPrice.toFixed(2)}
+                      {sumQuantity} {t("number")} {sumPrice.toFixed(2)}
                     </span>
                   </>
                 )}
@@ -242,10 +265,7 @@ const Header = () => {
           </div>
         </div>
       </header>
-      <div
-        id="navbar"
-        className="megamenu relative hidden lg:block z-[999px]"
-      >
+      <div id="navbar" className="megamenu relative hidden lg:block z-[999px]">
         <div className="w-[1170px] my-0 mx-auto  pr-[15px] pl-[15px] h-11  flex justify-between mb-[10px]">
           <div className="text-base mx-auto relative w-full z-90 float-left text-left flex justify-between">
             <div className="text-base mx-auto relative w-full z-90 float-left text-left flex justify-between">
@@ -261,7 +281,7 @@ const Header = () => {
                           setSubHeading("");
                         }}
                       >
-                        {link.name}
+                        {t('Household appliances')}
                       </h1>
                       {link.submenu && (
                         <div className="absolute  hidden group-hover:md:block hover:md:block z-[99] ">
@@ -295,20 +315,35 @@ const Header = () => {
                     </div>
                   </div>
                 ))}
-                <Link to="/telefon" className="hover:text-[#f15803]">
-                  Telefon və Planşetlər
+                <Link
+                  to="/telefon"
+                  className="hover:text-[#f15803] text-[15px] text-[#3a3a3a] "
+                >
+                  {t("Phones and tablets")}
                 </Link>
-                <Link to="/kompüter" className="hover:text-[#f15803]">
-                  Kompüter texnikası
+                <Link
+                  to="/kompüter"
+                  className="hover:text-[#f15803] text-[15px] text-[#3a3a3a]"
+                >
+                  {t("Computer technique")}
                 </Link>
-                <Link to="/tv-audio" className="hover:text-[#f15803]">
-                  TV, Audio, Foto-Video
+                <Link
+                  to="/tv-audio"
+                  className="hover:text-[#f15803] text-[15px] text-[#3a3a3a]"
+                >
+                  {t("Tv , Audio , Photo-video")}
                 </Link>
-                <Link to="/musiqi" className="hover:text-[#f15803]">
-                  Musiqi alətləri
+                <Link
+                  to="/musiqi"
+                  className="hover:text-[#f15803] text-[15px] text-[#3a3a3a] "
+                >
+                  {t("Musical instrumentl")}
                 </Link>
-                <Link to="/outlet" className="hover:text-[#f15803]">
-                  Outlet
+                <Link
+                  to="/outlet"
+                  className="hover:text-[#f15803] text-[15px] text-[#3a3a3a]"
+                >
+                  {t("Outlet")}
                 </Link>
               </div>
             </div>
