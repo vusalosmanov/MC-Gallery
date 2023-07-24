@@ -224,8 +224,8 @@ const Footer = () => {
               </div>
             </div>
             <div className="lg:w-[195px] lg:h-[192px] w-[100%] ">
-              <div>
-                <div className="mt-5 min-h-10 h-[41px]">
+              <div className="elaqe">
+                <div className="mt-5 min-h-10 h-[41px] ">
                   <h3 className="uppercase text-sm inline text-[#969696] relative font-bold">
                     Əlaqə
                   </h3>
@@ -264,7 +264,7 @@ const Footer = () => {
                       method="POST"
                       className="flex flex-col form pb-[20px]"
                     >
-                      <div className="flex">
+                      <div className="flex input">
                         <input
                           type="email"
                           value={email}

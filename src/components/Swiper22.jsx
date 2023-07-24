@@ -24,11 +24,11 @@ const Swiper22 = () => {
             .filter((item) => item.oldtype === "ozel")
             .map((product) => (
               <SwiperSlide>
-                <div className="flex ozel h-[355px] ">
+                <div className="flex ozel lg:h-[355px]  ">
                     <div className="w-[41%]">
                       <div className="p-[5px] hover:scale-[1.1] btn">
                         <img
-                          className="w-[100%] p-[20px] object-cover border-none cursor-pointer"
+                          className="lg:w-[100%] lg:p-[20px] object-cover border-none cursor-pointer"
                           src={` http://localhost:5000/${product.imageurl}`}
                           alt="noimg"
                         />

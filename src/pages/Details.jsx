@@ -60,7 +60,7 @@ const Details = ({}) => {
           <img
             src={`http://localhost:5000/${product.imageurl}`}
             alt=""
-            className="w-[400px] h-[400px]  cursor-pointer "
+            className="w-[400px] h-[400px]  cursor-pointer  object-contain"
           />
         </div>
         <div>
@@ -97,17 +97,19 @@ const Details = ({}) => {
             </div>
           </div>
         </div>
-        <div className="bg-[#f15803] pt-[14px] pb-[14px] pl-[6px] pr-[6px] text-white absolute top-[120px] right-[45px] flex w-[138px] text-center cursor-pointer border-[5px] justify-center gap-2  animate-shadow-pulse">
-          <img
-            src={image2}
-            alt=""
-            srcset=""
-            className="max-w-[100%] w-[52px] h-[52px]"
-          />
-          <div>
-            <p className="text-[12px]">
-              SIZƏ <br /> ZƏNG <br /> EDƏK?{" "}
-            </p>
+        <div className="lg:block hidden">
+          <div className="bg-[#f15803] pt-[14px] pb-[14px] pl-[6px] pr-[6px] text-white absolute top-[120px] right-[45px] flex w-[138px] text-center cursor-pointer border-[5px] justify-center gap-2  animate-shadow-pulse ">
+            <img
+              src={image2}
+              alt=""
+              srcset=""
+              className="max-w-[100%] w-[52px] h-[52px]"
+            />
+            <div>
+              <p className="text-[12px]">
+                SIZƏ <br /> ZƏNG <br /> EDƏK?{" "}
+              </p>
+            </div>
           </div>
         </div>
       </div>

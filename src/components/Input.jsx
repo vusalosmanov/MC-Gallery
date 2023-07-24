@@ -70,7 +70,7 @@ const Input = () => {
           />
           <div
             style={borderedDivStyle}
-            className="lg:w-[247px]  border-red-800 border  gap-[50px] absolute z-[99999999999] bg-white "
+            className="w-full  border-red-800 border  gap-[50px] absolute z-[99999999999] bg-white "
           >
             {filteredData.map((item) => (
               <Searchcart productName={item.name} imageUrl={item.imageurl} price={item.price} oldprice={item.oldprice} id={item.id} />

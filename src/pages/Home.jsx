@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Swiper from "../components/Swipers";
 import Swipers from "../components/Swiper22";
 import Swiperss from "../components/Swiper3";

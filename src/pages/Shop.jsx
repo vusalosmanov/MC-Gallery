@@ -5,14 +5,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../assets/styles/components/Accordion.scss";
 
-const Shop = ({}) => {
+const Shop = () => {
   const shop = useSelector((state) => state.cartData.cart);
   const dispatch = useDispatch();
 
   return (
     <>
       <div className="home">
-        {shop.length == 0 ? (
+        {shop.length === 0 ? (
           <div className="lg:w-[1170px]  w-full  my-0 mx-auto  pr-[15px] pl-[15px] flex justify-between items-end ">
             <div>
               <h1>Səbət</h1>

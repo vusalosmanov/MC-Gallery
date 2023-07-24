@@ -9,7 +9,7 @@ const Searchcart = ({ productName, imageUrl, price, oldprice, id }) => {
     setInputValue(""); // Inputun value'sini sıfırlamaq üçün
   };
   return (
-    <div className="border-t-[1px] pb-[5px]">
+    <div className="border-t-[1px] pb-[5px] ">
       <div className="flex  items-center p-[10px] ">
         <img
           className="w-[50%]  object-contain cursor-pointer"

@@ -65,6 +65,15 @@
     }
 
 }
+@media only screen and (max-width: 1024px) {
+    .input{
+        margin-top: 10px;
+    }
+    .elaqe{
+        margin-left: 14px;
+    }
+    
+}
 @media only screen and (max-width: 600px) {
 
     .iconss{
@@ -72,6 +81,7 @@
         flex-wrap: wrap;
         row-gap: 20px;
     }
+
 }
 @media only screen and (max-width: 290px) {
 
@@ -109,8 +119,8 @@
 }
 .swiper-pagination-bullet{
     color: black ;
-    width: 16px;
-    height: 16px;
+    width: 10px;
+    height: 10px;
     cursor: pointer;
 }
 .swiper-pagination-bullet-active{

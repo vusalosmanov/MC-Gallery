@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-// import "../assets/styles/components/Accordion"
+import "../assets/styles/components/Accordion.scss"
 import { Navigation, Pagination, Mousewheel, Keyboard, Autoplay } from "swiper";
 import image1 from "../assets/images/image/5-li-məhsul-banneri-gorenje-1920x700.png";
 import image2 from "../assets/images/image/Banner (2)-1920x700.png";

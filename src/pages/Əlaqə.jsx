@@ -22,6 +22,7 @@ const Əlaqə = () => {
       </ul>
       <div className="w-[100%] flex justify-center">
           <iframe
+          id="iframe"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d97211.23532160591!2d49.863989859924104!3d40.41214919242858!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x403063574986c38b%3A0xdb519e1eef512e46!2sMG%20store%20(music%20gallery-%C9%99hm%C9%99dli)!5e0!3m2!1saz!2saz!4v1686335327440!5m2!1saz!2saz"
             width="600"
             height="450"
