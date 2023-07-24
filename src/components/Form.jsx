@@ -5,11 +5,12 @@ function Form() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [letter, setLetter] = useState("");
-  const [MyData, SetMyData] = useState([]);
   const [notification, setNotification] = useState("");
   const [notificationn, setNotificationn] = useState("");
   const [notificationnn, setNotificationnn] = useState("");
   const [formSubmitted, setFormSubmitted] = useState(false); 
+
+  // *** Page Əlaqə Form *** 
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -36,6 +37,9 @@ function Form() {
       setFormSubmitted(false);
     }
   }, [formSubmitted]);
+
+
+  //   ***Alert***
 
   const Alert = () => {
     Swal.fire({

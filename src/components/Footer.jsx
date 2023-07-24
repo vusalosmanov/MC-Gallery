@@ -1,18 +1,21 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { AiOutlineDoubleRight } from "react-icons/ai";
-import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import image1 from "../assets/images/icon/visa_classic_chip.gif";
 import image2 from "../assets/images/icon/mastercard_logo_5.gif";
-import image3 from "../assets/images/icon/kapital.png";
-import image4 from "../assets/images/icon/icons8-facebook.gif";
 import image5 from "../assets/images/icon/icons8-instagram.gif";
-import image6 from "../assets/images/icon/icons8-youtube.gif";
+import image4 from "../assets/images/icon/icons8-facebook.gif";
 import image7 from "../assets/images/icon/icons8-whatsapp.gif";
+import image6 from "../assets/images/icon/icons8-youtube.gif";
+import { Link } from "react-router-dom";
+import { useState } from "react";
+import image3 from "../assets/images/icon/kapital.png";
 import "../assets/styles/components/Accordion.scss";
-import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+
+  //  ***Input type=email and button*** 
+
   const [email, setEmail] = useState("");
   const [notification, setNotification] = useState(false);
 
@@ -31,13 +34,16 @@ const Footer = () => {
     }
   };
 
-  const { t, i18n } = useTranslation();
+  //   ***Dil deyişmə***
+  
+  const { t } = useTranslation();
 
   return (
     <>
       <div className=" pt-[20px]  pb-[28px] bg-[#272727] text-gray-500 mt-8 font-nunito">
         <div className="lg:w-[1170px] w-full my-0 mx-auto  pr-[15px] pl-[15px]">
           <div className="lg:flex lg:justify-evenly flex flex-wrap  mr-[-15px] ml-[-15px] ">
+              {/* Footer content 1 */}
             <div className="lg:w-[195px] lg:h-[192px] w-[50%] pr-[15px] pl-[15px]">
               <div className="mt-5 min-h-10 h-[41px]">
                 <h3 className="uppercase text-sm inline text-gray-400 relative font-bold">
@@ -85,6 +91,7 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
+            {/* Footer content 2 */}
             <div className="lg:w-[195px] lg:h-[192px] w-[50%] pr-[15px] pl-[15px] ">
               <div>
                 <div className="mt-5 min-h-10 h-[41px]">
@@ -125,6 +132,7 @@ const Footer = () => {
                 </div>
               </div>
             </div>
+            {/* Footer content 3 */}
             <div className="lg:w-[195px] lg:h-[192px] w-[50%] pr-[15px] pl-[15px]">
               <div>
                 <div className="mt-5 min-h-10 h-[41px]">
@@ -174,6 +182,7 @@ const Footer = () => {
                 </div>
               </div>
             </div>
+            {/* Footer content 4 */}
             <div className="lg:w-[195px] lg:h-[192px] w-[50%] pr-[15px] pl-[15px]">
               <div>
                 <div className="mt-5 min-h-10 h-[41px]">
@@ -223,6 +232,7 @@ const Footer = () => {
                 </div>
               </div>
             </div>
+            {/* Footer content 5 */}
             <div className="lg:w-[195px] lg:h-[192px] w-[100%] ">
               <div className="elaqe">
                 <div className="mt-5 min-h-10 h-[41px] ">
@@ -280,7 +290,7 @@ const Footer = () => {
                         </button>
                       </div>
                       <div>
-                        {notification && email.length == 0 ? (
+                        {notification && email.length === 0 ? (
                           <label className="text-[red]">Email adress daxil et!</label>
                         ) : (
                           ""
@@ -294,6 +304,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      {/* Icon and Card */}
       <div className="bg-[#272727]  lg:block flex pb-[50px] pt-[10px]">
         <div className="w-[1170px] my-0 mx-auto pt-[20px] pr-[15px] pb-[40px] pl-[15px] border-t-[1px]    border-[#cccccc] border-b-[1px]">
           <div className=" iconss lg:flex lg:justify-between flex justify-evenly  ">

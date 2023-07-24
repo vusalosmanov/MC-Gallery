@@ -1,9 +1,13 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Searchcart from "./Searchcart";
-import { useTranslation } from "react-i18next";
+
 const Input = () => {
+
+  //  ***Input data product map***
+
   const [products, setProducts] = useState([]);
   const [filteredData, setFilteredData] = useState(products);
 
@@ -31,8 +35,9 @@ const Input = () => {
     display: filteredData.length === 0 ? "none" : "block",
   };
 
-  const { t, i18n } = useTranslation();
-
+    //   ***Dil deyişmə***
+    
+  const { t } = useTranslation();
 
   return (
     <>
@@ -73,7 +78,13 @@ const Input = () => {
             className="w-full  border-red-800 border  gap-[50px] absolute z-[99999999999] bg-white "
           >
             {filteredData.map((item) => (
-              <Searchcart productName={item.name} imageUrl={item.imageurl} price={item.price} oldprice={item.oldprice} id={item.id} />
+              <Searchcart
+                productName={item.name}
+                imageUrl={item.imageurl}
+                price={item.price}
+                oldprice={item.oldprice}
+                id={item.id}
+              />
             ))}
           </div>
         </div>

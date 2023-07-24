@@ -1,20 +1,24 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import image from "../assets/images/icon/logo.png";
-import Input from "../components/Input";
 import { FaRegMoneyBillAlt } from "react-icons/fa";
 import { AiFillCheckCircle } from "react-icons/ai";
 import { AiOutlineUser } from "react-icons/ai";
+import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-import { useState } from "react";
-import image1 from "../assets/images/icon/aze.png";
-import { Data } from "../components/Dropdata";
+import { Link } from "react-router-dom";
 import image2 from "../assets/images/icon/paltaryuyan.png";
-import Sidebar from "./sidebar";
+import { useState } from "react";
+import image from "../assets/images/icon/logo.png";
+import image1 from "../assets/images/icon/aze.png";
 import "../assets/styles/components/sidebar.css";
 import "../assets/styles/components/Slick.scss";
-import { useTranslation } from "react-i18next";
+import { Data } from "../components/Dropdata";
+import Input from "../components/Input";
+import Sidebar from "./sidebar";
+
 const Header = () => {
+  // ***Like  and Shop ***
+
+  
   const cart = useSelector((state) => state.cartData.cart);
 
   const sumAllProducts = cart.map((item) => {
@@ -29,20 +33,21 @@ const Header = () => {
   });
 
   const allQuantityLike = cart.map((item) => {
-    return item.quantity ;
+    return item.quantity;
   });
   const sumQuantity = allQuantity.reduce((prev, current) => prev + current, 0);
-  
-  const sumQuantityLike = allQuantityLike.reduce((prev, current) => prev + current, 0);
 
+  const sumQuantityLike = allQuantityLike.reduce(
+    (prev, current) => prev + current,
+    0
+  );
 
+  // ***Navbar Scroll ***
 
   const [heading, setHeading] = useState("");
   const [subHeading, setSubHeading] = useState("");
 
-
-
-  window.onscroll = function() {
+  window.onscroll = function () {
     scrollFunction();
   };
 
@@ -54,7 +59,7 @@ const Header = () => {
         navbar.style.color = "black";
         navbar.style.position = "fixed";
         navbar.style.top = "0";
-        navbar.style.zIndex = "9999px"
+        navbar.style.zIndex = "9999px";
         if (window.innerWidth <= 1024) {
           navbar.style.visibility = "hidden";
         } else {
@@ -66,17 +71,20 @@ const Header = () => {
         navbar.style.position = "relative";
         navbar.style.top = "0";
         navbar.style.visibility = "block";
-        navbar.style.zIndex = "9999px"
+        navbar.style.zIndex = "9999px";
       }
     }
   }
+
+
+    //   ***Dil deyişmə***
 
   const { t, i18n } = useTranslation();
 
   const clickHandle = async (lang) => {
     await i18n.changeLanguage(lang);
   };
-  
+
   return (
     <>
       <header className="block">
@@ -123,7 +131,10 @@ const Header = () => {
                 <ul className="flex items-center">
                   <img src={image1} alt="" className="w-[16px] h-[11px]" />
                   <div class="dropdown">
-                    <button class="dropbtn" className="py-0 px-3.5 h-4 text-[11px] font-normal leading-[15px] hover:text-slate-300">
+                    <button
+                      class="dropbtn"
+                      className="py-0 px-3.5 h-4 text-[11px] font-normal leading-[15px] hover:text-slate-300"
+                    >
                       {t("language")}
                       <i className="fa fa-angle-down"></i>
                     </button>
@@ -147,21 +158,21 @@ const Header = () => {
                     </ul>
                   </div>
                   <FaRegMoneyBillAlt className="text-[14px] ml-[10px]" />
-                    <a
-                      href="https://hesab.az/unregistered/#/direct-pay/loans/ferrum/parameters"
-                      target="_blank"
-                      className="flex items-center py-0 px-2.5 text-[11px] leading-[45px] font-normal hover:text-slate-300 "
-                      >
-                      {t("loan repayment")}
-                    </a>
-                    <AiFillCheckCircle className="text-[14px] ml-[10px] items-center" />
+                  <a
+                    href="https://hesab.az/unregistered/#/direct-pay/loans/ferrum/parameters"
+                    target="_blank"
+                    className="flex items-center py-0 px-2.5 text-[11px] leading-[45px] font-normal hover:text-slate-300 "
+                  >
+                    {t("loan repayment")}
+                  </a>
+                  <AiFillCheckCircle className="text-[14px] ml-[10px] items-center" />
                   <Link
                     to="/register"
                     className="flex items-center py-0 pr-2.5 pl-1.5 text-[11px] font-normal leading-[45px] hover:text-slate-300"
                   >
                     {t("registration")}
                   </Link>
-                    <AiOutlineUser className="text-[16px] ml-[10px]" />
+                  <AiOutlineUser className="text-[16px] ml-[10px]" />
                   <Link to="/books" className="flex items-center">
                     <a
                       href=""
@@ -212,7 +223,7 @@ const Header = () => {
                   <Link to="/like">
                     <div class="relative inline-block float-right text-gray-600 text-base no-underline cursor-pointer">
                       <span class="bg-[#f15803] text-white text-xs w-[21px] h-[21px] leading-4 border-2 border-white rounded-full text-center absolute  ">
-                        {sumQuantityLike}                    
+                        {sumQuantityLike}
                       </span>
                     </div>
                     <svg
@@ -276,83 +287,92 @@ const Header = () => {
       <div id="navbar" className="megamenu relative hidden lg:block z-[999px]">
         <div className="w-[1170px] my-0 mx-auto  pr-[15px] pl-[15px] h-11  flex justify-between mb-[10px]">
           <div className="text-base mx-auto relative w-full z-90 float-left text-left flex justify-between">
-              <div className="flex items-center justify-between w-[100%] space-x-4">
-                {Data.map((link) => (
-                  <div className="flex z-99">
-                    <div className="px-3 text-left md:cursor-pointer group hover:text-[#f15803]  font-extralight">
-                      <h1
-                        onClick={() => {
-                          heading !== link.name
-                            ? setHeading(link.name)
-                            : setHeading("");
+            <div className="flex items-center justify-between w-[100%] space-x-4">
+              {Data.map((link) => (
+                <div className="flex z-99">
+                  <div className="px-3 text-left md:cursor-pointer group hover:text-[#f15803]  font-extralight">
+                    <h1
+                      onClick={() => {
+                        if (heading !== link.name) {
+                          setHeading(link.name);
+                        } else {
+                          setHeading("");
                           setSubHeading("");
-                        }}
-                      >
-                        {t('Household appliances')}
-                      </h1>
-                      {link.submenu && (
-                        <div className="absolute  hidden group-hover:md:block hover:md:block z-[99] ">
-                          <div className="bg-white p-5 grid grid-cols-3 gap-10 mt-[22px] ">
-                            {link.sublinks.map((mysublinks) => (
-                              <div>
-                                <hr />
-                                <h1 className="text-lg font-semibold hover:text-[#f15803] ease-linear font-['Rubik']">
-                                  <img
-                                    src={image2}
-                                    alt=""
-                                    className="w-[160px] h-[150px]"
-                                  />
-                                  {mysublinks.Head}
-                                </h1>
-                                {mysublinks.sublink.map((slink) => (
-                                  <li className="text-sm text-gray-600 my-2.5">
-                                    <Link
-                                      to={slink.link}
-                                      className="hover:text-primary hover:text-[#f15803]"
-                                    >
-                                      {slink.name}
-                                    </Link>
-                                  </li>
-                                ))}
-                              </div>
-                            ))}
-                          </div>
+                        }
+                      }}
+                    >
+                      {t("Household appliances")}
+                    </h1>
+                    {link.submenu && (
+                      <div className="absolute  hidden group-hover:md:block hover:md:block z-[99] ">
+                        <div className="bg-white p-5 grid grid-cols-3 gap-10 mt-[22px] ">
+                          {link.sublinks.map((mysublinks) => (
+                            <div>
+                              <hr />
+                              <h1 className="text-lg font-semibold hover:text-[#f15803] ease-linear font-['Rubik']"
+                                onClick={() => {  
+                                  if (subHeading !== mysublinks.Head) {
+                                    setSubHeading(mysublinks.Head);
+                                  } else {
+                                    setSubHeading("");
+                                  }
+                                }}>
+                                <img
+                                  src={image2}
+                                  alt=""
+                                  className="w-[160px] h-[150px]"
+                                />
+                                {mysublinks.Head}
+                              </h1>
+                              {mysublinks.sublink.map((slink) => (
+                                <li className="text-sm text-gray-600 my-2.5">
+                                  <Link
+                                    to={slink.link}
+                                    className="hover:text-primary hover:text-[#f15803]"
+                                  >
+                                    {slink.name}
+                                  </Link>
+                                </li>
+                              ))}
+                            </div>
+                          ))}
                         </div>
-                      )}
-                    </div>
+                      </div>
+                    )}
                   </div>
-                ))}
-                <Link
-                  to="/telefon"
-                  className="hover:text-[#f15803] text-[15px] text-[#3a3a3a] "
-                >
-                  {t("Phones and tablets")}
-                </Link>
-                <Link
-                  to="/kompüter"
-                  className="hover:text-[#f15803] text-[15px] text-[#3a3a3a]"
-                >
-                  {t("Computer technique")}
-                </Link>
-                <Link
-                  to="/tv-audio"
-                  className="hover:text-[#f15803] text-[15px] text-[#3a3a3a]"
-                >
-                  {t("Tv , Audio , Photo-video")}
-                </Link>
-                <Link
-                  to="/musiqi"
-                  className="hover:text-[#f15803] text-[15px] text-[#3a3a3a] "
-                >
-                  {t("Musical instrumentl")}
-                </Link>
-                <Link
-                  to="/outlet"
-                  className="hover:text-[#f15803] text-[15px] text-[#3a3a3a]"
-                >
-                  {t("Outlet")}
-                </Link>
-              </div>
+                </div>
+              ))}
+              <Link
+                to="/telefon"
+                className="hover:text-[#f15803] text-[15px] text-[#3a3a3a] "
+              >
+                {t("Phones and tablets")}
+              </Link>
+              <Link
+                to="/kompüter"
+                className="hover:text-[#f15803] text-[15px] text-[#3a3a3a]"
+              >
+                {t("Computer technique")}
+              </Link>
+              <Link
+                to="/tv-audio"
+                className="hover:text-[#f15803] text-[15px] text-[#3a3a3a]"
+              >
+                {t("Tv , Audio , Photo-video")}
+              </Link>
+              <Link
+                to="/musiqi"
+                className="hover:text-[#f15803] text-[15px] text-[#3a3a3a] "
+              >
+                {t("Musical instrumentl")}
+              </Link>
+              <Link
+                to="/outlet"
+                className="hover:text-[#f15803] text-[15px] text-[#3a3a3a]"
+              >
+                {t("Outlet")}
+              </Link>
+            </div>
           </div>
         </div>
       </div>

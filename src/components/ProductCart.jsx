@@ -1,13 +1,12 @@
-import { Link } from "react-router-dom";
 import React from "react";
+import { AiOutlineSearch } from "react-icons/ai";
+import { TbPageBreak } from "react-icons/tb";
+import { Link } from "react-router-dom";
+import image from "../assets/images/icon/sale-old.png";
+import { useState } from "react";
+import Swal from "sweetalert2";
 import "../assets/styles/components/productcar.scss";
 import "../assets/styles/components/Accordion.scss";
-import image from "../assets/images/icon/sale-old.png";
-import Swal from "sweetalert2";
-import { useState } from "react";
-import image1 from "../assets/images/icon//55209-200.png";
-import { AiOutlineSearch } from "react-icons/ai"
-import { TbPageBreak } from "react-icons/tb"
 
 export const ProductCard = ({
   id,
@@ -17,8 +16,10 @@ export const ProductCard = ({
   oldprice,
   onClick,
   quantity,
-  onLike
+  onLike,
 }) => {
+  // ***Sebet button and Like button***
+
   const [isButtonClicked, setButtonClicked] = useState(false);
   const [likeCount, setLikeCount] = useState(false);
 
@@ -37,8 +38,6 @@ export const ProductCard = ({
     onClick();
     Alert();
   };
-
-
 
   const handleLikeClick = () => {
     setLikeCount(true);
@@ -77,7 +76,10 @@ export const ProductCard = ({
               </div>
               <div className="flex mt-[70px]">
                 <div>
-                  <button onClick={handleLikeClick} className="mr-4 border-[1px] bg-[#f15803] hover:bg-white hover:text-[#f15803] text-white w-[34px] h-[34px] btn">
+                  <button
+                    onClick={handleLikeClick}
+                    className="mr-4 border-[1px] bg-[#f15803] hover:bg-white hover:text-[#f15803] text-white w-[34px] h-[34px] btn"
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -94,15 +96,14 @@ export const ProductCard = ({
                 <div>
                   <Link to={`/details/${id}`}>
                     <button className="bg-[#f15803] border-[1px] hover:bg-white hover:text-[#f15803] text-white w-[34px] h-[34px] mr-4 btn">
-                    < TbPageBreak className="text-[22px] mt-[3px] ml-[5px] " />
+                      <TbPageBreak className="text-[22px] mt-[3px] ml-[5px] " />
                     </button>
                   </Link>
                 </div>
                 <div>
-                  <button  className="bg-[#f15803] border-[1px] hover:bg-white hover:text-[#f15803] text-white w-[34px] h-[34px]  btn  ">
+                  <button className="bg-[#f15803] border-[1px] hover:bg-white hover:text-[#f15803] text-white w-[34px] h-[34px]  btn  ">
                     <div className="w-[34px] h-[34px]  hover:text-[#f15803]">
-                      
-                   < AiOutlineSearch className="text-[22px] mt-[5px] ml-[5px]"/>
+                      <AiOutlineSearch className="text-[22px] mt-[5px] ml-[5px]" />
                     </div>
                   </button>
                 </div>
@@ -146,10 +147,14 @@ export const ProductCard = ({
           <div className="overlay_button hidden ">
             <button
               onClick={handleButtonClick}
+              // disabled={isButtonClicked}
               className="px-4 py-1 bg-[black] rounded-none text-white  shadow-lg shadow-black/80 "
             >
               Səbətə əlavə et
             </button>
+            {/* <div className="text-lime-500">
+              {isButtonClicked ? "sebete elave olunub" : ""} 
+            </div> */}
           </div>
         </div>
       </div>

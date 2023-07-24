@@ -25,6 +25,7 @@ const RegisterForm = () => {
 
     if (!name) {
       setNotification("Adınız 3 ilə 32 simvol arasında olmalıdır!");
+      
     }
     if (!surname) {
       setNotificationn("Soyad 3 ilə 32 simvol arasında olmalıdır!");
@@ -40,7 +41,7 @@ const RegisterForm = () => {
       setNotificationnnnn("Ünvan 3 ilə 128 simvol arası olmalıdır!");
     }
     if (!country) {
-      setNotificationnnnnn("Ölkəni seçin!");
+      setNotificationnnnnn("Şəhəri  seçin!");
     }
 
     if (name && surname && email && number && location && country) {
@@ -50,18 +51,19 @@ const RegisterForm = () => {
       setNumber("");
       setLocation("");
       setCountry("");
-      Alert();
     }
   };
 
   const Alert = () => {
-    Swal.fire({
-      position: "top-center",
-      icon: "success",
-      title: "Form təstiqləndi",
-      showConfirmButton: false,
-      timer: 1500,
-    });
+    if (name || surname || email || number || location || country) {
+      Swal.fire({
+        position: "top-center",
+        icon: "success",
+        title: "Form təstiqləndi",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    }
   };
 
   return (
@@ -177,8 +179,7 @@ const RegisterForm = () => {
             name="country"
             value={country}
             onChange={(e) => setCountry(e.target.value)}
-            className="border-[1px] w-[83%] h-[40px] focus:outline-none text-[#7d7d8d] p-[10px]"
-          >
+            className="border-[1px] w-[83%] h-[40px] focus:outline-none text-[#7d7d8d] p-[10px]">
             <option value="Azerbaijan">Azerbaijan</option>
             <option value="Afghanistan">Afghanistan</option>
             <option value="Åland Islands">Åland Islands</option>
@@ -204,7 +205,7 @@ const RegisterForm = () => {
             <option value="Belize">Belize</option>
           </select>
         </div>
-        <div className="w-[100%] flex justify-end mt-[20px]">
+        <div className="w-[100%] flex justify-end mt-[30px]">
           <button
             onClick={Alert}
             type="submit"
