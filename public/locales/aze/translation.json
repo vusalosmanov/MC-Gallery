@@ -3,21 +3,39 @@
     "brands" : "Brendlər",
     "branches" : "Filiallar",
     "connection" : "Əlaqə",
-    "language" : "Dil",
+    "language" : "DİL",
     "loan repayment" : "KREDİTİN ÖDƏNİŞİ",
     "registration" : " QEYDİYYAT",
     "my account" : "  HESABIM",
     "every day" : "Hər gün",
     "number" : "Ədəd",
     "search" : "Axtar...",
-    "the basket is empty" : "Sebet boşdur",
-    "Household appliances" : "Məişət textnikası",
+    "the basket is empty" : "Səbət boşdur",
+    "Household appliances" : "Məişət texnikası",
     "Phones and tablets" : "Telefon və planşetlər",
     "Computer technique" : "Kompüter texnikası",
     "Tv , Audio , Photo-video" : "Tv, Audio, Foto-video",
     "Musical instrumentl" : "Musiqi alətləri",
     "Outlet" : "Outlet",
-    "" : ""
+
+    "private cabinet" : "ŞƏXSİ KABİNET",
+    "my orders" : "Sifarişlərim",
+    "order history" : "Sifariş tarixçəsi",
+    "wish list" : "İstək siyahısı",
+    "newsletter" : "Xəbər bülleteni",
+
+    "music gallery" : "MUSİC GALLERY",
+    "about us" : "Haqqımızda",
+    "terms of use" : "İstifadə şərtləri",
+    "exchange and return policy" : "Dəyişdirilmə və qaytarılma qaydaları",
+
+    "for the customer" : "MÜŞTƏRİ ÜÇÜN",
+    "private cabinett" : "Şəxsi kabinet",
+    "corporate sales" : "Korporativ satış",
+    "faq" : "FAQ",
+    "privacy policy" : "Məxfilik siyasəti"
+
+
     
 
 }

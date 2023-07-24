@@ -27,10 +27,20 @@ const Header = () => {
   const allQuantity = cart.map((item) => {
     return item.quantity;
   });
+
+  const allQuantityLike = cart.map((item) => {
+    return item.quantity ;
+  });
   const sumQuantity = allQuantity.reduce((prev, current) => prev + current, 0);
+  
+  const sumQuantityLike = allQuantityLike.reduce((prev, current) => prev + current, 0);
+
+
 
   const [heading, setHeading] = useState("");
   const [subHeading, setSubHeading] = useState("");
+
+
 
   window.onscroll = function() {
     scrollFunction();
@@ -78,7 +88,7 @@ const Header = () => {
                   <li>
                     <Link
                       to="/kampaniyalar"
-                      className="py-0 px-2.5 text-sm hover:text-slate-300"
+                      className="py-0 px-2.5 text-[14px] hover:text-slate-300"
                     >
                       {t("campaigns")}
                     </Link>
@@ -86,7 +96,7 @@ const Header = () => {
                   <li>
                     <Link
                       to="/brendler"
-                      className="py-0 px-2.5 text-sm hover:text-slate-300"
+                      className="py-0 px-2.5 text-[14px] hover:text-slate-300 ml-[10px]"
                     >
                       {t("brands")}
                     </Link>
@@ -94,7 +104,7 @@ const Header = () => {
                   <li>
                     <Link
                       to="/filiallar"
-                      className="py-0 px-2.5 text-sm hover:text-slate-300"
+                      className="py-0 px-2.5 text-[14px] hover:text-slate-300 ml-[10px]"
                     >
                       {t("branches")}
                     </Link>
@@ -102,7 +112,7 @@ const Header = () => {
                   <li>
                     <Link
                       to="/əlaqə  "
-                      className="py-0 px-2.5 text-sm hover:text-slate-300"
+                      className="py-0 px-2.5 text-[14px] hover:text-slate-300 ml-[10px]"
                     >
                       {t("connection")}
                     </Link>
@@ -113,7 +123,7 @@ const Header = () => {
                 <ul className="flex items-center">
                   <img src={image1} alt="" className="w-[16px] h-[11px]" />
                   <div class="dropdown">
-                    <button class="dropbtn" className="py-0 px-3.5 h-4 text-sm">
+                    <button class="dropbtn" className="py-0 px-3.5 h-4 text-[11px] font-normal leading-[15px] hover:text-slate-300">
                       {t("language")}
                       <i className="fa fa-angle-down"></i>
                     </button>
@@ -121,7 +131,7 @@ const Header = () => {
                       <li>
                         <button
                           onClick={() => clickHandle("aze")}
-                          className="h-[30px]"
+                          className="pt-[2px]"
                         >
                           Azərbaycan
                         </button>
@@ -129,34 +139,34 @@ const Header = () => {
                       <li>
                         <button
                           onClick={() => clickHandle("en")}
-                          className="h-[30px]"
+                          className="pt-[2px]"
                         >
                           English
                         </button>
                       </li>
                     </ul>
                   </div>
+                  <FaRegMoneyBillAlt className="text-[14px] ml-[10px]" />
                     <a
                       href="https://hesab.az/unregistered/#/direct-pay/loans/ferrum/parameters"
                       target="_blank"
-                      className="flex items-center py-0 px-2.5 text-sm "
+                      className="flex items-center py-0 px-2.5 text-[11px] leading-[45px] font-normal hover:text-slate-300 "
                       >
-                  <FaRegMoneyBillAlt className="text-[16px] mr-[5px]" />
                       {t("loan repayment")}
                     </a>
+                    <AiFillCheckCircle className="text-[14px] ml-[10px] items-center" />
                   <Link
                     to="/register"
-                    className="flex items-center py-0 px-2.5 text-sm"
+                    className="flex items-center py-0 pr-2.5 pl-1.5 text-[11px] font-normal leading-[45px] hover:text-slate-300"
                   >
-                    <AiFillCheckCircle className="text-[16px] mr-[3px] items-center" />
                     {t("registration")}
                   </Link>
+                    <AiOutlineUser className="text-[16px] ml-[10px]" />
                   <Link to="/books" className="flex items-center">
                     <a
                       href=""
-                      className="py-0 flex px-2.5 text-sm items-center "
+                      className="py-0 flex pr-2.5  text-[11px] font-medium leading-[45px] items-center hover:text-slate-300  "
                     >
-                      <AiOutlineUser className="text-[16px] mr-[3px]" />
                       {t("my account")}
                       <i className="fa fa-angle-down ml-[3px]"></i>
                     </a>
@@ -166,9 +176,9 @@ const Header = () => {
             </div>
           </nav>
         </div>
-        <div className="text-center w-[100%] bg-white mb-[20px]">
+        <div className="text-center w-[100%] bg-white">
           <div className="lg:w-[1170px] w-full my-0 mx-auto  pr-[15px] pl-[15px] h-[120px] lg:flex lg:justify-between  lg:items-center flex justify-evenly  items-center  ">
-            <div className=" pt-[5px] w-[262px]">
+            <div className=" pt-[5px] w-[262px] ml-[7px]">
               <Link to="/home">
                 <img
                   src={image}
@@ -177,34 +187,32 @@ const Header = () => {
                 />
               </Link>
             </div>
-            <div className="w-[150px] lg:block hidden"></div>
-            <div className="flex items-center">
+            <div className="flex items-center ml-[50px]">
               <div className=" w-[247px] h-[40px] lg:block hidden">
                 <Input />
               </div>
               <div className="hidden lg:block">
-                <div className="ml-[3em]">
+                <div className="ml-[50px]">
                   <a href="tel:0121313" className="text-sm cursor-pointer">
                     <div className="flex">
-                      <h1 className="font-black text-left text-[33px] text-[#f15803] ">
+                      <h1 className="font-black text-left text-[33px] text-[#f15803] font-['Rubik'] ">
                         *1313
                       </h1>
                     </div>
                   </a>
-                  <p className="text-[12px] ml-[1em] w-[200px]">
+                  <p className="text-[12px] ml-[1em] w-[180px]">
                     {t("every day")} 09:00 - 20 : 00
                   </p>
                 </div>
               </div>
             </div>
-            <div className="w-[100px] lg:block hidden"></div>
-            <div className="flex gap-8">
+            <div className="flex gap-8 ml-[50px]">
               <div class="flex justify-center items-center bg-[#f15803] w-10 h-10">
-                <div class="relative py-2">
+                <div class="relative ">
                   <Link to="/like">
                     <div class="relative inline-block float-right text-gray-600 text-base no-underline cursor-pointer">
                       <span class="bg-[#f15803] text-white text-xs w-[21px] h-[21px] leading-4 border-2 border-white rounded-full text-center absolute  ">
-                        0
+                        {sumQuantityLike}                    
                       </span>
                     </div>
                     <svg
@@ -220,9 +228,9 @@ const Header = () => {
                   </Link>
                 </div>
               </div>
-              <div class="flex justify-center items-center bg-[#f15803] w-10 h-10">
+              <div class="flex justify-center items-center bg-[#f15803] w-10 h-10 ">
                 <div class="relative py-2">
-                  {sumQuantity > 0 && sumPrice > 0 && (
+                  {sumPrice > 0 && (
                     <Link to="/shop">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -243,14 +251,14 @@ const Header = () => {
                 </div>
               </div>
             </div>
-            <div className="flex text-[12px]  pl-[5px] text-[#3a3a3a] ">
+            <div className="flex text-[12px]  text-[#3a3a3a] ">
               <Link className="gap-2 lg:block hidden ">
                 {sumQuantity === 0 ? (
                   <span>{t("the basket is empty")}</span>
                 ) : (
                   <>
-                    <span className="text-[black]">
-                      {sumQuantity} {t("number")} {sumPrice.toFixed(2)}
+                    <span className="text-[#3a3a3a] text-[12px] ">
+                      {sumQuantity} {t("number")} {sumPrice.toFixed(2)}₼
                     </span>
                   </>
                 )}
@@ -268,7 +276,6 @@ const Header = () => {
       <div id="navbar" className="megamenu relative hidden lg:block z-[999px]">
         <div className="w-[1170px] my-0 mx-auto  pr-[15px] pl-[15px] h-11  flex justify-between mb-[10px]">
           <div className="text-base mx-auto relative w-full z-90 float-left text-left flex justify-between">
-            <div className="text-base mx-auto relative w-full z-90 float-left text-left flex justify-between">
               <div className="flex items-center justify-between w-[100%] space-x-4">
                 {Data.map((link) => (
                   <div className="flex z-99">
@@ -289,7 +296,7 @@ const Header = () => {
                             {link.sublinks.map((mysublinks) => (
                               <div>
                                 <hr />
-                                <h1 className="text-lg font-semibold hover:text-[#f15803] ease-linear">
+                                <h1 className="text-lg font-semibold hover:text-[#f15803] ease-linear font-['Rubik']">
                                   <img
                                     src={image2}
                                     alt=""
@@ -346,7 +353,6 @@ const Header = () => {
                   {t("Outlet")}
                 </Link>
               </div>
-            </div>
           </div>
         </div>
       </div>

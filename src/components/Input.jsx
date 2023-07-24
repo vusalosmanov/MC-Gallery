@@ -33,9 +33,6 @@ const Input = () => {
 
   const { t, i18n } = useTranslation();
 
-  const clickHandle = async (lang) => {
-    await i18n.changeLanguage(lang);
-  };
 
   return (
     <>
@@ -65,7 +62,7 @@ const Input = () => {
         </div>
         <div>
           <input
-            className="block w-full pt-0 pr-[40px] pl-[40px] pb-0 leading-[41px] text-sm text-gray-900 border border-[#f15803]   focus:ring-[#f15803] focus:border-[#f15803]"
+            className="block w-full pt-0 pr-[40px] pl-[40px] pb-0 leading-[41px] text-sm text-gray-900 border border-[#f15803] focus:outline-none  focus:border-[#f15803]"
             type="text"
             name="search"
             placeholder={t("search")}

@@ -1,30 +1,28 @@
-.sliderproduct_main{
-    transition: all ease 4s;
-    :hover{
-        cursor: pointer;
-       
-            .overlay_for_img{
-                display: block;
-                transition: all ease 0.4s;
-            }
-            .overlay_top{
-                transition: all 0.5s;
-            }
-     
-           .products_text{
-            display: none;
-           }
+.sliderproduct_main {
+  :hover {
+    cursor: pointer;
+    .overlay_for_img {
+      display: block;
+    }
+    .products_text {
+      display: none;
+    }
 
-           .overlay_button{
-            display: block;
-           }
-            img{
-                transition: all ease 0.2s;
-            }
-   
-       
+    .overlay_button {
+      display: block;
     }
-    .sliderproduct_img{
-        transition: all ease 1s;
-    }
+  }
+  .overlay_top {
+    width: 100%;
+    padding: 1rem;
+    // transform: scale(0);
+    transition: all 0.3s ease-in-out;
+    backdrop-filter: blur(1px) brightness(100%);
+  }
+}
+
+.sliderproduct_img img {
+  :hover .overlay_top {
+    transform: scale(1);
+  }
 }

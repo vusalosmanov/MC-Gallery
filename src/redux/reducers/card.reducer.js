@@ -21,6 +21,22 @@ export const cardReducer = (state = initialState, action) => {
           cart: [...state.cart, { ...action.payload, quantity: 1 }],
         };
       }
+    case 'ADD_TO_LIKE':
+      const existingProduct = state.cart.find((item) => item.id === action.payload.id);
+      if (existingProduct) {
+        return {
+          cart: state.cart.map((item) => {
+            if (item.id === action.payload.id) {
+              return { ...item, quantity: item.quantity + 1 };
+            }
+            return item;
+          }),
+        };
+      } else {
+        return {
+          cart: [...state.cart, { ...action.payload, quantity: 1 }],
+        };
+      }
     case 'DELETE_CART': {
       const filteredData = state.cart.filter(
         (item) => item.id !== action.payload

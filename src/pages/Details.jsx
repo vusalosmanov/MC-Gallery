@@ -7,23 +7,10 @@ import { AiFillCaretRight } from "react-icons/ai";
 import { useSelector } from "react-redux";
 import image from "../assets/images/icon/sale-old.png";
 import image1 from "../assets/images/image/stars-0.png";
+import image2 from "../assets/images/icon/phone_icon.png";
 import "../assets/styles/components/Accordion.scss";
 import Swiper3 from "../components/Swiper3";
-const Details = ({
-  onClick,
-  quantity,
-  showDeleteButton = false,
-  onAddQty,
-  onDeleteQty,
-  addQtyBtn = false,
-  delQtyBtn = false,
-}) => {
-  const cart = useSelector((state) => state.cartData.cart);
-  const sumAllProducts = cart.map((item) => {
-    return item.quantity * item.price;
-  });
-  const sumPrice = sumAllProducts.reduce((prev, current) => prev + current, 0);
-
+const Details = ({}) => {
   const [product, setProduct] = useState(null);
   const [error, setError] = useState("");
   const { id } = useParams();
@@ -39,7 +26,7 @@ const Details = ({
   }
   if (!product) return null;
   return (
-    <div className="lg:w-[1170px]  my-0 mx-auto  pr-[15px] pl-[15px] w-full ">
+    <div className="lg:w-[1170px]  my-0 mx-auto  pr-[15px] pl-[15px] w-full relative ">
       <ul className="lg:flex gap-4 mt-[20px] mr-[0px] mb-[20px] ml-[0px] text-sm flex flex-wrap">
         <li className="flex items-center gap-2">
           <Link to="/home" className="hover:text-[#f15803]">
@@ -100,23 +87,27 @@ const Details = ({
           <div>
             <span className="text-[15px] flex items-center gap-3">
               Qiymət:
-              <p className="text-[#29c435] text-[20px]">{product.oldprice}</p>
+              <p className="text-[#29c435] text-[20px]">{product.oldprice}₼</p>
             </span>
             <div className="mt-[15px]">
               <span className="text-[20px] text-[#ffff] mr-[3px] bg-[#f15803] pt-[1px] pb-[1px] pr-[7px] pl-[7px]">
-                {product.endirim}
+                {product.endirim}₼
               </span>
-              <span className="text-[18px]">nağd alışda:{product.price}</span>
+              <span className="text-[18px]">nağd alışda:{product.price}₼</span>
             </div>
           </div>
-
-          <div className="flex gap-3">
-            {addQtyBtn && <button onClick={onAddQty}>+</button>}
-            <span className="border-[1px]">{quantity}</span>
-            {delQtyBtn && <button onClick={onDeleteQty}>-</button>}
-            {showDeleteButton && <button onClick={onClick}>X</button>}
-            {/* <p>{product.details}</p> */}
-            {/* <p>{sumPrice.toFixed(2)}</p> */}
+        </div>
+        <div className="bg-[#f15803] pt-[14px] pb-[14px] pl-[6px] pr-[6px] text-white absolute top-[120px] right-[45px] flex w-[138px] text-center cursor-pointer border-[5px] justify-center gap-2  animate-shadow-pulse">
+          <img
+            src={image2}
+            alt=""
+            srcset=""
+            className="max-w-[100%] w-[52px] h-[52px]"
+          />
+          <div>
+            <p className="text-[12px]">
+              SIZƏ <br /> ZƏNG <br /> EDƏK?{" "}
+            </p>
           </div>
         </div>
       </div>

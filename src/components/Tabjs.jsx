@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { addToCart, deleteQty, addQty } from "../redux/actions/card.action";
+import { addToCart, deleteQty, addQty , addToLike  } from "../redux/actions/card.action";
 import ProductCard from "./ProductCart";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { tabOptions } from "./Data";
@@ -71,6 +71,18 @@ export default function Home() {
                           onClick={() => {
                             dispatch(
                               addToCart({
+                                id: product.id,
+                                productName: product.name,
+                                price: product.price,
+                                brend: product.brend,
+                                oldprice: product.oldprice,
+                                imageUrl: product.imageurl,
+                              })
+                            );
+                          }}
+                          onLike={() => {
+                            dispatch(
+                              addToLike({
                                 id: product.id,
                                 productName: product.name,
                                 price: product.price,
@@ -192,6 +204,18 @@ export default function Home() {
                             imageUrl: product.imageurl,
                           })
                         );
+                      }}
+                      onLike={() => {
+                        dispatch(
+                          addToLike({
+                            id: product.id,
+                            productName: product.name,
+                            price: product.price,
+                            brend: product.brend,
+                            oldprice: product.oldprice,
+                            imageUrl: product.imageurl,
+                          })
+                        )
                       }}
                     />
                   ))}

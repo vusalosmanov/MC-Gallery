@@ -99,7 +99,7 @@ function Form() {
         <div className="w-[100%] flex justify-end">
           <button
             type="submit"
-            className="border-[1px] p-[6px] bg-[#f15803] text-white mt-[-16px]"
+            className="border-[1px] p-[6px] bg-[#f15803] text-white "
             onClick={handleSubmit}
           >
             Təstiqlə

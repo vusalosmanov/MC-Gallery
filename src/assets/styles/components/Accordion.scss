@@ -125,3 +125,19 @@
 .abc > link{
     gap: 5px;
 }
+
+@keyframes shadow-pulse {
+    0% {
+      box-shadow: 0 0 0 0 transparent;
+    }
+    50% {
+      box-shadow: 0 0 0 0.9rem rgba(0, 0, 0, 0.15);
+    }
+    100% {
+      box-shadow: 0 0 0 0 transparent;
+    }
+  }
+.btn {
+    transition-property: all;
+    transition-duration: 0.3s; 
+}

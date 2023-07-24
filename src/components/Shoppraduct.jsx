@@ -23,13 +23,13 @@ export const ProductCard = ({
   const handleButtonClick = () => {
     setButtonClicked(true);
     Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
+      title: "Məhsulu silməyə əminsiz?",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
+      confirmButtonText: "Bəli!",
+      cancelButtonText: "Xeyr!",
     }).then((result) => {
       if (result.isConfirmed) {
         onClick();
@@ -73,7 +73,7 @@ export const ProductCard = ({
                 {addQtyBtn && <button onClick={onAddQty}>+</button>}
                 {delQtyBtn && <button onClick={onDeleteQty}>-</button>}
                 {showDeleteButton && <button onClick={handleButtonClick}>
-                {isButtonClicked ? "Confirm Delete" : "X"}</button>}
+                {isButtonClicked ? "" : "X"}</button>}
               </div>
             </th>
             <th className="border-[1px] p-[20px]">

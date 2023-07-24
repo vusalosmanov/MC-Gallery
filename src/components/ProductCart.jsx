@@ -1,10 +1,14 @@
 import { Link } from "react-router-dom";
 import React from "react";
 import "../assets/styles/components/productcar.scss";
-import image from "../assets/images/icon/sale-old.png";
 import "../assets/styles/components/Accordion.scss";
+import image from "../assets/images/icon/sale-old.png";
 import Swal from "sweetalert2";
 import { useState } from "react";
+import image1 from "../assets/images/icon//55209-200.png";
+import { AiOutlineSearch } from "react-icons/ai"
+import { TbPageBreak } from "react-icons/tb"
+
 export const ProductCard = ({
   id,
   productName,
@@ -13,8 +17,10 @@ export const ProductCard = ({
   oldprice,
   onClick,
   quantity,
+  onLike
 }) => {
   const [isButtonClicked, setButtonClicked] = useState(false);
+  const [likeCount, setLikeCount] = useState(false);
 
   const Alert = () => {
     Swal.fire({
@@ -31,6 +37,15 @@ export const ProductCard = ({
     onClick();
     Alert();
   };
+
+
+
+  const handleLikeClick = () => {
+    setLikeCount(true);
+    onLike();
+  };
+
+  console.log(onLike);
   return (
     <div className="sliderproduct_main flex justify-center items-center   ">
       <div className="sliderproduct_main2 flex flex-col items-center w-[204px] h-[298px] gap-8 ">
@@ -40,7 +55,7 @@ export const ProductCard = ({
               <img
                 src={image}
                 alt=""
-                className="w-[70px] absolute top-8 left-[-15px] z-[-99999px] "
+                className="w-[70px] absolute top-6 left-[-15px] z-[-99999px] "
               />
             </span>
           </div>
@@ -50,7 +65,49 @@ export const ProductCard = ({
             alt="noimg"
           />
           <div className="overlay_for_img w-[184px] h-[184px]  absolute hidden ">
-            <div className=" overlay_top h-1/2 bg-gray-600/[0.5] "></div>
+            <div className="overlay_top h-[110px] bg-gray-900/[0.4] transition-all duration-400 ease flex items-center justify-center">
+              <div>
+                <span>
+                  <img
+                    src={image}
+                    alt=""
+                    className="w-[70px] absolute top-6 left-[-15px] z-[-99999px] "
+                  />
+                </span>
+              </div>
+              <div className="flex mt-[70px]">
+                <div>
+                  <button onClick={handleLikeClick} className="mr-4 border-[1px] bg-[#f15803] hover:bg-white hover:text-[#f15803] text-white w-[34px] h-[34px] btn">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="file: mt-4 h-4 w-5  text-white mb-3"
+                      className=" w-5 h-4 text-center ml-[5.5px]"
+                    >
+                      <path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402m5.726-20.583c-2.203 0-4.446 1.042-5.726 3.238-1.285-2.206-3.522-3.248-5.719-3.248-3.183 0-6.281 2.187-6.281 6.191 0 4.661 5.571 9.429 12 15.809 6.43-6.38 12-11.148 12-15.809 0-4.011-3.095-6.181-6.274-6.181" />
+                    </svg>
+                  </button>
+                </div>
+                <div>
+                  <Link to={`/details/${id}`}>
+                    <button className="bg-[#f15803] border-[1px] hover:bg-white hover:text-[#f15803] text-white w-[34px] h-[34px] mr-4 btn">
+                    < TbPageBreak className="text-[22px] mt-[3px] ml-[5px] " />
+                    </button>
+                  </Link>
+                </div>
+                <div>
+                  <button  className="bg-[#f15803] border-[1px] hover:bg-white hover:text-[#f15803] text-white w-[34px] h-[34px]  btn  ">
+                    <div className="w-[34px] h-[34px]  hover:text-[#f15803]">
+                      
+                   < AiOutlineSearch className="text-[22px] mt-[5px] ml-[5px]"/>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
             <div className="overlay_bottom h-1/2 bg-black flex items-center justify-center flex-col  ">
               <div>
                 <button>
@@ -88,8 +145,8 @@ export const ProductCard = ({
 
           <div className="overlay_button hidden ">
             <button
-               onClick={handleButtonClick}
-              className="px-4 py-1 bg-[black] rounded-none text-white "
+              onClick={handleButtonClick}
+              className="px-4 py-1 bg-[black] rounded-none text-white  shadow-lg shadow-black/80 "
             >
               Səbətə əlavə et
             </button>

@@ -21,22 +21,22 @@ const Swiper22 = () => {
       <Swiper>
         {products?.length > 0 &&
           products
-            .filter((item) => item.oldtype === "baxilan")
+            .filter((item) => item.oldtype === "ozel")
             .map((product) => (
               <SwiperSlide>
-                <div className="flex ozel ">
+                <div className="flex ozel h-[355px] ">
                     <div className="w-[41%]">
-                      <div className="p-[5px]">
+                      <div className="p-[5px] hover:scale-[1.1] btn">
                         <img
-                          className="w-[100%]  object-cover border-none cursor-pointer"
+                          className="w-[100%] p-[20px] object-cover border-none cursor-pointer"
                           src={` http://localhost:5000/${product.imageurl}`}
                           alt="noimg"
                         />
                       </div>
                     </div>
-                    <div className="w-[58%]">
-                        <div>
-                            <Link to="/{id}" className="lg:text-[18px] font-bold text-[#4a4a4a] uppercase text-[14px] ozel-text">{product.name}</Link>
+                    <div className="w-[56%]">
+                        <div className="mt-[10px]">
+                            <Link to={`/details/${product.id}`} className="lg:text-[18px] font-bold text-[#4a4a4a] uppercase text-[14px] ozel-text">{product.name}</Link>
                         </div>
                         <div className="border-b-[1px]">
                             <span className="lg:text-[21px] text-[16px] text-[#f15803] p-[5px]">{product.price}₼</span>

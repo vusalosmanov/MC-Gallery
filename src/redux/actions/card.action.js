@@ -4,6 +4,12 @@ export const addToCart = (data) => {
         payload: data
     }
 }
+export const addToLike = (data) => {
+    return {
+        type: 'ADD_TO_LIKE',
+        payload: data
+    }
+}
 
 export const deleteCart = (id) => {
     return {

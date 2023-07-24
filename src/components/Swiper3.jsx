@@ -7,7 +7,7 @@ import image3 from "../assets/images/icon/Philips_logo-178x105.png";
 import image4 from "../assets/images/icon/Samsung-178x105.png";
 import image5 from "../assets/images/icon/Sharp-178x105.png";
 import image6 from "../assets/images/icon/Sony-178x105.png";
-
+import "../assets/styles/components/Accordion.scss"
 const Swiper3 = () => {
   return (
     <Swiper
@@ -24,57 +24,57 @@ const Swiper3 = () => {
       className="mySwiper border-[1px] lg:w-full "
     >
       <SwiperSlide>
-        <div className="pt-[1px] pb-[1px] pr-[15px] pl-[15px] w-full flex justify-center">
+        <div className="pt-[1px] pb-[1px] pr-[15px] pl-[15px] w-full flex justify-center hover:scale-[1.1] btn">
           <img src={image1} alt="" className="flex justify-center " />
         </div>
       </SwiperSlide>
       <SwiperSlide>
-        <div className="pt-[1px] pb-[1px] pr-[15px] pl-[15px] w-full flex justify-center ">
+        <div className="pt-[1px] pb-[1px] pr-[15px] pl-[15px] w-full flex justify-center hover:scale-[1.1] btn ">
           <img src={image2} alt=""  />
         </div>
       </SwiperSlide>
       <SwiperSlide>
-        <div className="pt-[1px] pb-[1px] pr-[15px] pl-[15px] w-full flex justify-center  ">
+        <div className="pt-[1px] pb-[1px] pr-[15px] pl-[15px] w-full flex justify-center hover:scale-[1.1]  btn ">
           <img src={image3} alt="" />
         </div>
       </SwiperSlide>
       <SwiperSlide>
-        <div className="pt-[1px] pb-[1px] pr-[15px] pl-[15px] w-full flex justify-center ">
+        <div className="pt-[1px] pb-[1px] pr-[15px] pl-[15px] w-full flex justify-center hover:scale-[1.1] btn">
           <img src={image4} alt="" />
         </div>
       </SwiperSlide>
       <SwiperSlide>
-        <div className="pt-[1px] pb-[1px] pr-[15px] pl-[15px] w-full flex justify-center ">
+        <div className="pt-[1px] pb-[1px] pr-[15px] pl-[15px] w-full flex justify-center hover:scale-[1.1] btn ">
           <img src={image5} alt="" />
         </div>
       </SwiperSlide>
       <SwiperSlide>
-        <div className="pt-[1px] pb-[1px] pr-[15px] pl-[15px] w-full flex justify-center ">
+        <div className="pt-[1px] pb-[1px] pr-[15px] pl-[15px] w-full flex justify-center hover:scale-[1.1]  btn">
           <img src={image6} alt="" />
         </div>
       </SwiperSlide>
       <SwiperSlide>
-        <div className="pt-[1px] pb-[1px] pr-[15px] pl-[15px] w-full flex justify-center ">
+        <div className="pt-[1px] pb-[1px] pr-[15px] pl-[15px] w-full flex justify-center hover:scale-[1.1] btn ">
           <img src={image5} alt="" />
         </div>
       </SwiperSlide>
       <SwiperSlide>
-        <div className="pt-[1px] pb-[1px] pr-[15px] pl-[15px] w-full flex justify-center ">
+        <div className="pt-[1px] pb-[1px] pr-[15px] pl-[15px] w-full flex justify-center hover:scale-[1.1] btn ">
           <img src={image4} alt="" />
         </div>
       </SwiperSlide>
       <SwiperSlide>
-        <div className="pt-[1px] pb-[1px] pr-[15px] pl-[15px] w-full flex justify-center  ">
+        <div className="pt-[1px] pb-[1px] pr-[15px] pl-[15px] w-full flex justify-center hover:scale-[1.1]  btn ">
           <img src={image3} alt="" />
         </div>
       </SwiperSlide>
       <SwiperSlide>
-        <div className="pt-[1px] pb-[1px] pr-[15px] pl-[15px] w-full flex justify-center ">
+        <div className="pt-[1px] pb-[1px] pr-[15px] pl-[15px] w-full flex justify-center hover:scale-[1.1]  btn">
           <img src={image2} alt="" />
         </div>
       </SwiperSlide>
       <SwiperSlide>
-        <div className="pt-[1px] pb-[1px] pr-[15px] pl-[15px] w-full flex justify-center  ">
+        <div className="pt-[1px] pb-[1px] pr-[15px] pl-[15px] w-full flex justify-center hover:scale-[1.1] btn  ">
           <img src={image1} alt="" />
         </div>
       </SwiperSlide>
