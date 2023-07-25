@@ -1,6 +1,6 @@
 import React from "react";
 import Swiper from "../components/Swipers";
-import Swipers from "../components/Swiper22";
+import Swipers from "../components/Swiper2";
 import Swiperss from "../components/Swiper3";
 import image8 from "../assets/images/image/reklam.jpg";
 import image9 from "../assets/images/image/reklam1.png";

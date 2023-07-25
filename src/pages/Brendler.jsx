@@ -124,7 +124,7 @@ const Brendler = () => {
             <AiFillCaretRight />
           </li>
           <li>
-            <Link to="/" className="text-[#f15803]">
+            <Link className="text-[#f15803]">
               Brendlər
             </Link>
           </li>
@@ -132,7 +132,7 @@ const Brendler = () => {
         <div>
           <h1 className="text-[#6b6a81] text-[18px] mb-[22px]">BREDLƏR</h1>
           <p className="abc gap-3">
-            <strong className="text-[15px]">Brend indeksi:</strong>
+            <span className="text-[15px] font-[300] ">Brend indeksi:</span>
             &nbsp;&nbsp;&nbsp;
             <Link
               to="/"
@@ -241,8 +241,8 @@ const Brendler = () => {
               <button onClick={() => handleClick("r")}>Z</button>
             </Link>
           </p>
-          <h2>0-9</h2>
-          <p>2E</p>
+          <h2 className="text-[#6b6a81] text-[18px] mb-[22px] mt-[22px]">0 - 9</h2>
+          <p className="text-[#666] text-[14px] cursor-pointer mb-[22px] font-[200]">2E</p>
         </div>
         <div className="brend">
           <h2 className="text-[#6b6a81] text-[18px] mb-[22px]">A</h2>

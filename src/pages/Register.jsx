@@ -1,7 +1,8 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { AiFillCaretRight } from 'react-icons/ai'
+import { Link } from 'react-router-dom'
 import RegisterForm from '../components/RegisterForm'
+
 const Register = () => {
   return (
     <div className='lg:w-[1170px] my-0 mx-auto  pr-[15px] pl-[15px] w-full'>
@@ -11,11 +12,11 @@ const Register = () => {
                 <AiFillCaretRight/>
             </li>
             <li className='flex items-center gap-2'>
-                <Link to='/'>Hesab</Link>
+                <Link>Hesab</Link>
                 <AiFillCaretRight/>
             </li>
             <li>
-                <Link to='/' className='text-[#f15803]'>Qeydiyyat</Link>
+                <Link className='text-[#f15803]'>Qeydiyyat</Link>
             </li>
         </ul>
         <h1 className='text-[#6b6a81] text-[20px] mb-[20px]'>HESAB QEYDIYYATI</h1>

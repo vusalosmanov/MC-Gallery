@@ -1,13 +1,14 @@
 import React from "react";
 import { Swiper, SwiperSlide  } from "swiper/react";
-import { Autoplay } from "swiper";
-import image1 from "../assets/images/icon/AEG-178x105.png";
-import image2 from "../assets/images/icon/Gorenje-178x105.png";
 import image3 from "../assets/images/icon/Philips_logo-178x105.png";
 import image4 from "../assets/images/icon/Samsung-178x105.png";
+import image2 from "../assets/images/icon/Gorenje-178x105.png";
 import image5 from "../assets/images/icon/Sharp-178x105.png";
 import image6 from "../assets/images/icon/Sony-178x105.png";
+import { Autoplay } from "swiper";
+import image1 from "../assets/images/icon/AEG-178x105.png";
 import "../assets/styles/components/Accordion.scss"
+
 const Swiper3 = () => {
   return (
     <Swiper

@@ -15,7 +15,7 @@ const Filiallar = () => {
             <AiFillCaretRight />
           </li>
           <li>
-            <Link to="/" className="text-[#f15803]">
+            <Link className="text-[#f15803]">
               Filiallar
             </Link>
           </li>

@@ -1,7 +1,7 @@
 import React from 'react'
+import { FloatingWhatsApp } from 'react-floating-whatsapp';
 import ReactWhatsapp from "react-whatsapp";
 import "../assets/styles/components/sidebar.css";
-import { FloatingWhatsApp } from 'react-floating-whatsapp';
 
 const Whatsapp = () => {
   return (

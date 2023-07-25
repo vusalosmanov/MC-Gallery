@@ -22,6 +22,7 @@ const RegisterForm = () => {
     setNotificationnn("");
     setNotificationnnn("");
     setNotificationnnnn("");
+    setNotificationnnnnn("")
 
     if (!name) {
       setNotification("Adınız 3 ilə 32 simvol arasında olmalıdır!");

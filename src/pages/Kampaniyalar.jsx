@@ -13,7 +13,7 @@ const Kampaniyalar = () => {
                 <AiFillCaretRight/>
             </li>
             <li>
-                <Link to='/' className='text-[#f15803]'>Kampaniyalar</Link>
+                <Link  className='text-[#f15803]'>Kampaniyalar</Link>
             </li>
         </ul>
         <div className='mb-[17px] w-full'>

@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { AiFillCaretRight } from "react-icons/ai";
-import Swiperss from "../components/Swiper3";
 import image from "../assets/images/icon/logo.png"
+import Swiperss from "../components/Swiper3";
 import Form from "../components/Form";
 const Əlaqə = () => {
   return (
@@ -15,7 +15,7 @@ const Əlaqə = () => {
           <AiFillCaretRight />
         </li>
         <li>
-          <Link to="/" className="text-[#f15803]">
+          <Link className="text-[#f15803]">
             Əlaqə
           </Link>
         </li>

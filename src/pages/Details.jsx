@@ -1,15 +1,15 @@
 import React from "react";
+import { AiFillCaretRight } from "react-icons/ai";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import axios from "axios";
 import { Link } from "react-router-dom";
-import { AiFillCaretRight } from "react-icons/ai";
-import { useSelector } from "react-redux";
-import image from "../assets/images/icon/sale-old.png";
-import image1 from "../assets/images/image/stars-0.png";
 import image2 from "../assets/images/icon/phone_icon.png";
+import image1 from "../assets/images/image/stars-0.png";
+import image from "../assets/images/icon/sale-old.png";
 import "../assets/styles/components/Accordion.scss";
+import axios from "axios";
 import Swiper3 from "../components/Swiper3";
+
 const Details = ({}) => {
   const [product, setProduct] = useState(null);
   const [error, setError] = useState("");
@@ -25,6 +25,7 @@ const Details = ({}) => {
     return <h1>{error}</h1>;
   }
   if (!product) return null;
+
   return (
     <div className="lg:w-[1170px]  my-0 mx-auto  pr-[15px] pl-[15px] w-full relative ">
       <ul className="lg:flex gap-4 mt-[20px] mr-[0px] mb-[20px] ml-[0px] text-sm flex flex-wrap">
@@ -50,18 +51,22 @@ const Details = ({}) => {
       </ul>
       <div className="detailes flex ">
         <div className="relative pr-[15px] pl-[15px] w-[500px]">
-          <span>
-            <img
-              src={image}
-              alt=""
-              className="w-[70px] absolute top-8 left-[-15px] z-[-99999px]"
-            />
-          </span>
-          <img
-            src={`http://localhost:5000/${product.imageurl}`}
-            alt=""
-            className="w-[400px] h-[400px]  cursor-pointer  object-contain"
-          />
+          <div className="w-[470px] h-[400px]">
+            <span>
+              <img
+                src={image}
+                alt=""
+                className="w-[70px] absolute top-8 left-[-15px] z-[-99999px]"
+              />
+            </span>
+            <div className="w-[400px]">
+              <img
+                src={`http://localhost:5000/${product.imageurl}`}
+                alt=""
+                className=" w-[400px] cursor-pointer  object-contain"
+              />
+            </div>
+          </div>
         </div>
         <div>
           <h1 className="text-[33px] text-[#575757]">{product.name}</h1>

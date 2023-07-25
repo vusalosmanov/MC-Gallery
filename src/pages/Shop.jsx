@@ -15,9 +15,9 @@ const Shop = () => {
         {shop.length === 0 ? (
           <div className="lg:w-[1170px]  w-full  my-0 mx-auto  pr-[15px] pl-[15px] flex justify-between items-end ">
             <div>
-              <h1>Səbət</h1>
+              <h1  className="text-[20px] text-[#6b6a81] mb-[22px]">SƏBƏT</h1>
 
-              <h1>Sizin səbətiniz boşdur!</h1>
+              <h1 className="text-[#4d4d4d] text-[14px] mb-[20px] font-[200]">Sizin səbətiniz boşdur!</h1>
             </div>
             <div>
               <button className="border-[1px] p-[6px] bg-[#f15803] text-white mt-[-16px] ">

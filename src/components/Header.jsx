@@ -37,10 +37,7 @@ const Header = () => {
   });
   const sumQuantity = allQuantity.reduce((prev, current) => prev + current, 0);
 
-  const sumQuantityLike = allQuantityLike.reduce(
-    (prev, current) => prev + current,
-    0
-  );
+  const sumQuantityLike = allQuantityLike.reduce((prev, current) => prev + current, 0 );
 
   // ***Navbar Scroll ***
 
@@ -223,7 +220,7 @@ const Header = () => {
                   <Link to="/like">
                     <div class="relative inline-block float-right text-gray-600 text-base no-underline cursor-pointer">
                       <span class="bg-[#f15803] text-white text-xs w-[21px] h-[21px] leading-4 border-2 border-white rounded-full text-center absolute  ">
-                        {sumQuantityLike}
+                        {/* {sumQuantityLike} */}0
                       </span>
                     </div>
                     <svg

@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import ProductCard from "../components/ProductCart";
-import { addToCart } from "../redux/actions/card.action.js";
-import { useDispatch } from "react-redux";
-import axios from "axios";
 import { AiOutlineDoubleRight } from "react-icons/ai";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../redux/actions/card.action.js";
+import ProductCard from "../components/ProductCart";
 import "../assets/styles/components/Accordion.scss"
+import axios from "axios";
+
 const Səsucaldan = () => {
   const dispatch = useDispatch();
   const [products, setProducts] = useState([]);
@@ -63,7 +64,7 @@ const Səsucaldan = () => {
 
   return (
     <>
-      <div className="lg:w-[1170px] my-0 mx-auto  pr-[15px] pl-[15px] flex justify-between paltar">
+      <div className="lg:w-[1170px] my-0 mx-auto  pr-[15px] pl-[15px] flex justify-between pt-[40px] paltar">
         <aside className="aside">
           <div>
             <h2 className="brend">QİYMƏT</h2>
@@ -119,7 +120,7 @@ const Səsucaldan = () => {
             <button onClick={showAllProducts}>BÜTÜN MƏHSULLAR</button>
           </div>
         </aside>
-        <div className="lg:w-3/4 w-full flex flex-wrap gap-[50px] paltar1">
+        <div className="lg:w-[80%] w-full flex flex-wrap justify-center  gap-[20px] paltar1">
           {filteredData.map((item) => (
             <ProductCard
               key={item.id}

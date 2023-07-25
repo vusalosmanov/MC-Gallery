@@ -66,7 +66,7 @@ const Paltaryuyan = () => {
 
   return (
     <>
-    <div className="lg:w-[1170px] lg:my-0 lg:mx-auto  lg:pr-[15px] lg:pl-[15px] lg:flex lg:justify-between paltar ">
+    <div className="lg:w-[1170px] lg:my-0 lg:mx-auto  lg:pr-[15px] lg:pl-[15px] lg:flex lg:justify-between pt-[40px] paltar ">
         <aside className="aside">
           <div>
             <h2 className="brend">QİYMƏT</h2>
@@ -110,7 +110,7 @@ const Paltaryuyan = () => {
             <button onClick={showAllProducts}>BÜTÜN MƏHSULLAR</button>
           </div>
         </aside>
-        <div className="lg:w-3/4 w-full flex flex-wrap gap-[50px] paltar1">
+        <div className="lg:w-[80%] w-full flex flex-wrap justify-center  gap-[10px]  paltar1">
           {filteredData.map((item) => (
             <ProductCard
               key={item.id}

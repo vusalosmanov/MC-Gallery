@@ -24,9 +24,9 @@ function Form() {
     if (!letter) {
       setNotificationnn("Məktub 10 ilə 3000 simvol arasında olmalıdır!");
     } else {
-      setName("");
-      setEmail("");
-      setLetter("");
+      setNotification("")
+      setNotificationn("")
+      setNotificationnn("")
       setFormSubmitted(true);
     }
   };

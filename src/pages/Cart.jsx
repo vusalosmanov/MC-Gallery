@@ -1,7 +1,7 @@
 import React from "react";
+import { deleteCart, deleteQty, addQty } from "../redux/actions/card.action";
 import { useDispatch, useSelector} from "react-redux";
 import ProductCard from "../components/ProductCart.jsx"
-import { deleteCart, deleteQty, addQty } from "../redux/actions/card.action";
 
 const Cart = () => {
   const shop = useSelector((state) => state.cartData.cart);
