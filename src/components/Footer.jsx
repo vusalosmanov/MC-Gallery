@@ -119,7 +119,7 @@ const Footer = () => {
                         {t("terms of use")}
                       </Link>
                     </li>
-                    <li className="leading-3 text-xs flex items-start  h-[46px] w-[185px] hover:pl-[10px] hover:w-[165px] transition-all dey">
+                    <li className="leading-3 text-xs flex items-start   h-[46px] w-[160px] hover:pl-[10px] hover:w-[165px] transition-all dey">
                       <AiOutlineDoubleRight className="mt-[3px]" />
                       <Link
                         to="/"
