@@ -16,8 +16,8 @@ const Home = () => {
         </div>
       </div>
       <div className="lg:w-[1170px] w-full my-0 mx-auto mb-[50px] flex lg:justify-between justify-center  ">
-        <div className="border-t border-[lpx] border-gray-300 w-[72.3%] py-[3] ml-[0] border-l border-[1px]  ">
-          <div className="flex justify-between items-center border-b-[1px]">
+        <div className="border-t border-[lpx] border-gray-300 lg:w-[72.3%] w-full py-[3] ml-[0] border-l border-[1px]  ">
+          <div className="flex justify-between items-center border-b-[1px] ">
             <h2 className="text-blueGray-600 text-xl uppercase mb-[10px] mt-[10px] pl-[15px] ">
               <span className="text-[#6b6a81] font-bold text-[16px] ">ÖZƏL TƏKLİF!</span>
             </h2>

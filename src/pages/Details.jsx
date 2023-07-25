@@ -51,7 +51,7 @@ const Details = ({}) => {
       </ul>
       <div className="detailes flex ">
         <div className="relative pr-[15px] pl-[15px] w-[500px]">
-          <div className="w-[470px] h-[400px]">
+          <div className="lg:w-[470px] h-[400px]">
             <span>
               <img
                 src={image}
@@ -59,7 +59,7 @@ const Details = ({}) => {
                 className="w-[70px] absolute top-8 left-[-15px] z-[-99999px]"
               />
             </span>
-            <div className="w-[400px]">
+            <div className="lg:w-[400px]">
               <img
                 src={`http://localhost:5000/${product.imageurl}`}
                 alt=""

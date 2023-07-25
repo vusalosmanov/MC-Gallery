@@ -115,7 +115,7 @@ const Brendler = () => {
 
   return (
     <>
-      <div className="lg:w-[1170px] lg:my-0 lg:mx-auto  lg:pr-[15px] lg:pl-[15px] border-t w-full">
+      <div className="lg:w-[1170px] lg:my-0 lg:mx-auto  lg:pr-[15px] lg:pl-[15px] border-t w-full brend">
         <ul className="flex gap-4 mt-[20px] mr-[0px] mb-[20px] ml-[0px] text-sm">
           <li className="flex items-center gap-2">
             <Link to="/home" className="hover:text-[#f15803]">

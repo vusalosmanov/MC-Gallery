@@ -15,7 +15,7 @@ const BurgerMenu = () => {
   React.useEffect(() => {
     const handleScroll = () => {
       if (isMenuOpen) {
-        document.body.style.overflow = "hidden";
+        document.body.style.overflow = "block";
       } else {
         document.body.style.overflow = "auto";
       }

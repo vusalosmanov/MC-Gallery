@@ -18,7 +18,6 @@ import Sidebar from "./sidebar";
 const Header = () => {
   // ***Like  and Shop ***
 
-  
   const cart = useSelector((state) => state.cartData.cart);
 
   const sumAllProducts = cart.map((item) => {
@@ -37,7 +36,10 @@ const Header = () => {
   });
   const sumQuantity = allQuantity.reduce((prev, current) => prev + current, 0);
 
-  const sumQuantityLike = allQuantityLike.reduce((prev, current) => prev + current, 0 );
+  const sumQuantityLike = allQuantityLike.reduce(
+    (prev, current) => prev + current,
+    0
+  );
 
   // ***Navbar Scroll ***
 
@@ -73,8 +75,7 @@ const Header = () => {
     }
   }
 
-
-    //   ***Dil deyişmə***
+  //   ***Dil deyişmə***
 
   const { t, i18n } = useTranslation();
 
@@ -184,6 +185,42 @@ const Header = () => {
             </div>
           </nav>
         </div>
+          <ul className="lg:hidden flex items-center justify-end mt-[20px] mr-[30px]">
+            <div class="dropdown">
+              <button
+                class="dropbtn"
+                className="py-0 px-3.5 h-4 text-[11px] flex font-normal items-center leading-[15px] hover:text-slate-300"
+              >
+                <img src={image1} alt="" className="w-[16px] h-[11px]" />
+                <i className="fa fa-angle-down ml-[2px]"></i>
+              </button>
+              <ul class="dropdown-content">
+                <li>
+                  <button
+                    onClick={() => clickHandle("aze")}
+                    className="pt-[2px]"
+                  >
+                    Azərbaycan
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => clickHandle("en")}
+                    className="pt-[2px]"
+                  >
+                    English
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <a
+              href="https://hesab.az/unregistered/#/direct-pay/loans/ferrum/parameters"
+              target="_blank"
+              className="flex items-center py-0 px-2.5 text-[11px] leading-[45px] font-normal hover:text-slate-300 "
+            >
+              <FaRegMoneyBillAlt className="text-[14px] ml-[10px]" />
+            </a>
+          </ul>
         <div className="text-center w-[100%] bg-white">
           <div className="lg:w-[1170px] w-full my-0 mx-auto  pr-[15px] pl-[15px] h-[120px] lg:flex lg:justify-between  lg:items-center flex justify-evenly  items-center  ">
             <div className=" pt-[5px] w-[262px] ml-[7px]">
@@ -306,14 +343,16 @@ const Header = () => {
                           {link.sublinks.map((mysublinks) => (
                             <div>
                               <hr />
-                              <h1 className="text-lg font-semibold hover:text-[#f15803] ease-linear font-['Rubik']"
-                                onClick={() => {  
+                              <h1
+                                className="text-lg font-semibold hover:text-[#f15803] ease-linear font-['Rubik']"
+                                onClick={() => {
                                   if (subHeading !== mysublinks.Head) {
                                     setSubHeading(mysublinks.Head);
                                   } else {
                                     setSubHeading("");
                                   }
-                                }}>
+                                }}
+                              >
                                 <img
                                   src={image2}
                                   alt=""
