@@ -185,42 +185,36 @@ const Header = () => {
             </div>
           </nav>
         </div>
-          <ul className="lg:hidden flex items-center justify-end mt-[20px] mr-[30px]">
-            <div class="dropdown">
-              <button
-                class="dropbtn"
-                className="py-0 px-3.5 h-4 text-[11px] flex font-normal items-center leading-[15px] hover:text-slate-300"
-              >
-                <img src={image1} alt="" className="w-[16px] h-[11px]" />
-                <i className="fa fa-angle-down ml-[2px]"></i>
-              </button>
-              <ul class="dropdown-content">
-                <li>
-                  <button
-                    onClick={() => clickHandle("aze")}
-                    className="pt-[2px]"
-                  >
-                    Azərbaycan
-                  </button>
-                </li>
-                <li>
-                  <button
-                    onClick={() => clickHandle("en")}
-                    className="pt-[2px]"
-                  >
-                    English
-                  </button>
-                </li>
-              </ul>
-            </div>
-            <a
-              href="https://hesab.az/unregistered/#/direct-pay/loans/ferrum/parameters"
-              target="_blank"
-              className="flex items-center py-0 px-2.5 text-[11px] leading-[45px] font-normal hover:text-slate-300 "
+        <ul className="lg:hidden flex items-center justify-end mt-[20px] mr-[30px]">
+          <div class="dropdown">
+            <button
+              class="dropbtn"
+              className="py-0 px-3.5 h-4 text-[11px] flex font-normal items-center leading-[15px] hover:text-slate-300"
             >
-              <FaRegMoneyBillAlt className="text-[14px] ml-[10px]" />
-            </a>
-          </ul>
+              <img src={image1} alt="" className="w-[16px] h-[11px]" />
+              <i className="fa fa-angle-down ml-[2px]"></i>
+            </button>
+            <ul class="dropdown-content">
+              <li>
+                <button onClick={() => clickHandle("aze")} className="pt-[2px]">
+                  Azərbaycan
+                </button>
+              </li>
+              <li>
+                <button onClick={() => clickHandle("en")} className="pt-[2px]">
+                  English
+                </button>
+              </li>
+            </ul>
+          </div>
+          <a
+            href="https://hesab.az/unregistered/#/direct-pay/loans/ferrum/parameters"
+            target="_blank"
+            className="flex items-center py-0 px-2.5 text-[11px] leading-[45px] font-normal hover:text-slate-300 "
+          >
+            <FaRegMoneyBillAlt className="text-[14px] ml-[10px]" />
+          </a>
+        </ul>
         <div className="text-center w-[100%] bg-white">
           <div className="lg:w-[1170px] w-full my-0 mx-auto  pr-[15px] pl-[15px] h-[120px] lg:flex lg:justify-between  lg:items-center flex justify-evenly  items-center  ">
             <div className=" pt-[5px] w-[262px] ml-[7px]">
@@ -251,7 +245,7 @@ const Header = () => {
                 </div>
               </div>
             </div>
-            <div className="flex gap-8 ml-[50px]">
+            <div className="flex gap-4 ml-[50px] items-center">
               <div class="flex justify-center items-center bg-[#f15803] w-10 h-10">
                 <div class="relative ">
                   <Link to="/like">
@@ -274,7 +268,7 @@ const Header = () => {
                 </div>
               </div>
               <div class="flex justify-center items-center bg-[#f15803] w-10 h-10 ">
-                <div class="relative py-2">
+                <div class="relative">
                   {sumPrice > 0 && (
                     <Link to="/shop">
                       <svg
@@ -295,19 +289,19 @@ const Header = () => {
                   )}
                 </div>
               </div>
-            </div>
-            <div className="flex text-[12px]  text-[#3a3a3a] ">
-              <Link className="gap-2 lg:block hidden ">
-                {sumQuantity === 0 ? (
-                  <span>{t("the basket is empty")}</span>
-                ) : (
-                  <>
-                    <span className="text-[#3a3a3a] text-[12px] ">
-                      {sumQuantity} {t("number")} {sumPrice.toFixed(2)}₼
-                    </span>
-                  </>
-                )}
-              </Link>
+              <div className="flex text-[12px]  text-[#3a3a3a] ">
+                <Link className="lg:block hidden ">
+                  {sumQuantity === 0 ? (
+                    <span>{t("the basket is empty")}</span>
+                  ) : (
+                    <>
+                      <span className="text-[#3a3a3a] text-[12px] ">
+                        {sumQuantity} {t("number")} {sumPrice.toFixed(2)}₼
+                      </span>
+                    </>
+                  )}
+                </Link>
+              </div>
             </div>
           </div>
         </div>
