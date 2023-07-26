@@ -69,7 +69,7 @@ export const cardReducer = (state = initialState, action) => {
           (item) => item.id === action.payload && item.quantity === 1
         )
       ) {
-        alert("Məhsul sayı birden az olmaz. Məhsul silinsin?");
+        alert("Məhsul sayı birden az olmaz.");
       }
 
       return {

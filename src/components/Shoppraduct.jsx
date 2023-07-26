@@ -41,7 +41,7 @@ export const ProductCard = ({
 
   return (
     <>
-      <div className="lg:w-[1170px] w-full  my-0 mx-auto  pr-[15px] pl-[15px] lg:block md:block hidden ">
+      <div className="lg:w-[1170px] w-full  my-0 mx-auto  pr-[15px] pl-[15px] lg:block md:block hidden  mb-[20px]">
         <table id="customers" className="lg:w-[1170px]">
           <thead className="text-center bg-[#f7f7f7] text-[16px]">
             <tr className="border-[1px] text-[#4d4d4d]">
@@ -98,7 +98,7 @@ export const ProductCard = ({
           </tr>
         </table>
       </div>
-      <div className="w-full lg:hidden md:hidden flex justify-center ">
+      <div className="w-full lg:hidden md:hidden flex justify-center mb-[20px] ">
         <table id="customers" className="border-[1px] lg:w-[1170px]">
           <tr className="border-[1px] mt-[20px]">
           <th className="border-[1px] w-[168px] p-[8px]">

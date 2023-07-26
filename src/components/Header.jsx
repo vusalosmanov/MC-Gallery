@@ -292,7 +292,7 @@ const Header = () => {
               <div className="flex text-[12px]  text-[#3a3a3a] ">
                 <Link className="lg:block hidden ">
                   {sumQuantity === 0 ? (
-                    <span>{t("the basket is empty")}</span>
+                    <span className="gap-2">{sumQuantity} Ədəd- {sumPrice}.00₼</span>
                   ) : (
                     <>
                       <span className="text-[#3a3a3a] text-[12px] ">
