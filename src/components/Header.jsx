@@ -31,15 +31,15 @@ const Header = () => {
     return item.quantity;
   });
 
-  const allQuantityLike = cart.map((item) => {
-    return item.quantity;
-  });
+  // const allQuantityLike = cart.map((item) => {
+  //   return item.quantity;
+  // });
   const sumQuantity = allQuantity.reduce((prev, current) => prev + current, 0);
 
-  const sumQuantityLike = allQuantityLike.reduce(
-    (prev, current) => prev + current,
-    0
-  );
+  // const sumQuantityLike = allQuantityLike.reduce(
+  //   (prev, current) => prev + current,
+  //   0
+  // );
 
   // ***Navbar Scroll ***
 
