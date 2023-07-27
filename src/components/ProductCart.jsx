@@ -20,8 +20,8 @@ export const ProductCard = ({
 }) => {
   // ***Sebet button and Like button***
 
-  const [isButtonClicked, setButtonClicked] = useState(false);
-  const [likeCount, setLikeCount] = useState(false);
+  const [setButtonClicked] = useState(false);
+  const [setLikeCount] = useState(false);
 
   const Alert = () => {
     Swal.fire({

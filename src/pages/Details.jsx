@@ -10,7 +10,7 @@ import "../assets/styles/components/Accordion.scss";
 import axios from "axios";
 import Swiper3 from "../components/Swiper3";
 
-const Details = ({}) => {
+const Details = () => {
   const [product, setProduct] = useState(null);
   const [error, setError] = useState("");
   const { id } = useParams();
