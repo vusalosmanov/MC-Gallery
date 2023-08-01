@@ -9,14 +9,24 @@ import { tabOptions } from "./Data";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState(tabOptions[0]);
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState(() => {
+    const storedProducts = localStorage.getItem("products");
+    return storedProducts ? JSON.parse(storedProducts) : [];
+  });
+  
   const dispatch = useDispatch();
 
+  //    ***Datalari LocalStorage de saxlamag***
+  
   useEffect(() => {
     axios("http://localhost:5000/api/products")
-      .then((res) => setProducts(res.data))
+      .then((res) => {
+        setProducts(res.data);
+        localStorage.setItem("products", JSON.stringify(res.data));
+      })
       .catch((err) => console.log(err));
   }, []);
+  
 
   return (
     <div className="flex justify-center lg:w-[1170px] my-0 mx-auto  text-gray-400 ">

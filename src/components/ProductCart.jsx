@@ -1,7 +1,7 @@
 import React from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import { TbPageBreak } from "react-icons/tb";
-import { Link } from "react-router-dom";
+import { json, Link } from "react-router-dom";
 import image from "../assets/images/icon/sale-old.png";
 import { useState } from "react";
 import Swal from "sweetalert2";
@@ -20,8 +20,9 @@ export const ProductCard = ({
 }) => {
   // ***Sebet button and Like button***
 
-  const [setButtonClicked] = useState(false);
-  const [setLikeCount] = useState(false);
+  const [ buttonClicked ,setButtonClicked] = useState(false);
+  
+  const [ likeCount ,setLikeCount] = useState(false);
 
   const Alert = () => {
     Swal.fire({
@@ -37,7 +38,21 @@ export const ProductCard = ({
     setButtonClicked(true);
     onClick();
     Alert();
+    const existingCartItems = JSON.parse(localStorage.getItem("cartItems")) || []
+
+    const itemInCart = existingCartItems.find((item) => item.id === id)
+
+    if(itemInCart) {
+      itemInCart.quantity += 1
+    } 
+    else {
+      existingCartItems.push({id , productName , price ,imageurl ,oldprice ,quantity : 1})
+    }
+
+    localStorage.setItem("cartItems" , JSON.stringify(existingCartItems))
   };
+  
+
 
   const handleLikeClick = () => {
     setLikeCount(true);
