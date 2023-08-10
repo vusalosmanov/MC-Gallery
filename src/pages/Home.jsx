@@ -2,9 +2,9 @@ import React from "react";
 import Swiper from "../components/Swipers";
 import Swipers from "../components/Swiper2";
 import Swiperss from "../components/Swiper3";
-import image8 from "../assets/images/image/reklam.jpg";
-import image9 from "../assets/images/image/reklam1.png";
-import image10 from "../assets/images/image/reklam2.png";
+import reklam from "../assets/images/image/reklam.jpg";
+import reklam1 from "../assets/images/image/reklam1.png";
+import reklam2 from "../assets/images/image/reklam2.png";
 import Tabjs from "../components/Tabjs";
 const Home = () => {
   return (
@@ -25,16 +25,16 @@ const Home = () => {
           <Swipers/>
         </div>
         <div className="lg:block hidden hover:scale-[1.1]  btn ">
-          <img src={image8} alt="" className="h-[402px] " />
+          <img src={reklam} alt="reklam" className="h-[402px] " />
         </div>
       </div>
       <Tabjs />
       <div className="lg:w-[1170px] w-full my-0 mx-auto  pr-[15px] pl-[15px] flex gap-4">
         <div className="lg:block hidden ">
-          <img src={image9} alt="" className="h-[247px]" />
+          <img src={reklam1} alt="reklam1" className="h-[247px]" />
         </div>
         <div>
-          <img src={image10} alt="" />
+          <img src={reklam2} alt="reklam2" />
         </div>
       </div>
     </>

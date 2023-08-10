@@ -1,14 +1,14 @@
-import React from "react";
+import React  from "react";
 import { FaRegMoneyBillAlt } from "react-icons/fa";
 import { AiFillCheckCircle } from "react-icons/ai";
 import { AiOutlineUser } from "react-icons/ai";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import image2 from "../assets/images/icon/paltaryuyan.png";
+import aze_logo from "../assets/images/icon/aze.png";
+import paltaryuyan from "../assets/images/icon/paltaryuyan.png";
 import { useState } from "react";
-import image from "../assets/images/icon/logo.png";
-import image1 from "../assets/images/icon/aze.png";
+import mc_gallery from "../assets/images/icon/logo.png";
 import "../assets/styles/components/sidebar.css";
 import "../assets/styles/components/Slick.scss";
 import { Data } from "../components/Dropdata";
@@ -127,7 +127,7 @@ const Header = () => {
               </div>
               <div className="hidden lg:block">
                 <ul className="flex items-center">
-                  <img src={image1} alt="" className="w-[16px] h-[11px]" />
+                  <img src={aze_logo} alt="flag" className="w-[16px] h-[11px]" />
                   <div class="dropdown">
                     <button
                       class="dropbtn"
@@ -161,7 +161,7 @@ const Header = () => {
                     target="_blank"
                     className="flex items-center py-0 px-2.5 text-[11px] leading-[45px] font-normal hover:text-slate-300 "
                   >
-                    {t("loan repayment")}
+                    {t("loan_repayment")}
                   </a>
                   <AiFillCheckCircle className="text-[14px] ml-[10px] items-center" />
                   <Link
@@ -176,7 +176,7 @@ const Header = () => {
                       href=""
                       className="py-0 flex pr-2.5  text-[11px] font-medium leading-[45px] items-center hover:text-slate-300  "
                     >
-                      {t("my account")}
+                      {t("my_account")}
                       <i className="fa fa-angle-down ml-[3px]"></i>
                     </a>
                   </Link>
@@ -191,7 +191,7 @@ const Header = () => {
               class="dropbtn"
               className="py-0 px-3.5 h-4 text-[11px] flex font-normal items-center leading-[15px] hover:text-slate-300"
             >
-              <img src={image1} alt="" className="w-[16px] h-[11px]" />
+              <img src={aze_logo} alt="" className="w-[16px] h-[11px]" />
               <i className="fa fa-angle-down ml-[2px]"></i>
             </button>
             <ul class="dropdown-content">
@@ -220,8 +220,8 @@ const Header = () => {
             <div className=" pt-[5px] w-[262px] ml-[7px]">
               <Link to="/home">
                 <img
-                  src={image}
-                  alt=""
+                  src={mc_gallery}
+                  alt="mc_gallery"
                   className="cursor-pointer block mx-w-[100%]"
                 />
               </Link>
@@ -240,7 +240,7 @@ const Header = () => {
                     </div>
                   </a>
                   <p className="text-[12px] ml-[1em] w-[180px]">
-                    {t("every day")} 09:00 - 20 : 00
+                    {t("every_day")} 09:00 - 20 : 00
                   </p>
                 </div>
               </div>
@@ -329,7 +329,7 @@ const Header = () => {
                         }
                       }}
                     >
-                      {t("Household appliances")}
+                      {t("household_appliances")}
                     </h1>
                     {link.submenu && (
                       <div className="absolute  hidden group-hover:md:block hover:md:block z-[99] ">
@@ -348,8 +348,8 @@ const Header = () => {
                                 }}
                               >
                                 <img
-                                  src={image2}
-                                  alt=""
+                                  src={paltaryuyan}
+                                  alt="paltar"
                                   className="w-[160px] h-[150px]"
                                 />
                                 {mysublinks.Head}
@@ -376,31 +376,31 @@ const Header = () => {
                 to="/telefon"
                 className="hover:text-[#f15803] text-[15px] text-[#3a3a3a] "
               >
-                {t("Phones and tablets")}
+                {t("phones_and_tablets")}
               </Link>
               <Link
                 to="/kompüter"
                 className="hover:text-[#f15803] text-[15px] text-[#3a3a3a]"
               >
-                {t("Computer technique")}
+                {t("computer_technique")}
               </Link>
               <Link
                 to="/tv-audio"
                 className="hover:text-[#f15803] text-[15px] text-[#3a3a3a]"
               >
-                {t("Tv , Audio , Photo-video")}
+                {t("tv_audio_photo-video")}
               </Link>
               <Link
                 to="/musiqi"
                 className="hover:text-[#f15803] text-[15px] text-[#3a3a3a] "
               >
-                {t("Musical instrumentl")}
+                {t("musical_instrumentl")}
               </Link>
               <Link
                 to="/outlet"
                 className="hover:text-[#f15803] text-[15px] text-[#3a3a3a]"
               >
-                {t("Outlet")}
+                {t("outlet")}
               </Link>
             </div>
           </div>

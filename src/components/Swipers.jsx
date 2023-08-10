@@ -1,13 +1,13 @@
 import React from "react";
 import { Navigation, Pagination, Mousewheel, Keyboard, Autoplay } from "swiper";
-import image4 from "../assets/images/image/evinin-qayghisina-qalan-texnologiya-1920x700.png";
-import image7 from "../assets/images/image/5-li-məhsul-banneri-dyson-lifestyle-1920x700.png";
-import image5 from "../assets/images/image/vestel kondisioner web banner-1920x700.png";
-import image1 from "../assets/images/image/5-li-məhsul-banneri-gorenje-1920x700.png";
-import image3 from "../assets/images/image/dyson-banner-tozsoran-2-1920x700.png";
+import notbuk from "../assets/images/image/notbuk.png";
+import dyson from "../assets/images/image/dyson.png";
+import gorenje from "../assets/images/image/gorenje.png";
+import banner from "../assets/images/image/Banner.png";
+import dy_tozsoran from "../assets/images/image/dyson_tozsoran.png";
+import el_tozsoran from "../assets/images/image/eletrik_tozsoran.png";
+import ve_kondisioner from "../assets/images/image/vestel_kondisioner.png";
 import { Swiper, SwiperSlide } from "swiper/react";
-import image6 from "../assets/images/image/notbuk-banner (3)-1920x700.png";
-import image2 from "../assets/images/image/Banner (2)-1920x700.png";
 import "../assets/styles/components/Accordion.scss";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -44,25 +44,25 @@ const Swipers = () => {
         }
       >
         <SwiperSlide>
-          <img src={image6} alt="" />
+          <img src={notbuk} alt="notbuk" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={image7} alt="" />
+          <img src={dyson} alt="dyson" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={image1} alt="" />
+          <img src={gorenje} alt="gorenje" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={image2} alt="" />
+          <img src={banner} alt="banner" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={image3} alt="" />
+          <img src={dy_tozsoran} alt="dy_tozsoran" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={image4} alt="" />
+          <img src={el_tozsoran} alt="el_tozsoran" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={image5} alt="" />
+          <img src={ve_kondisioner} alt="ve_kondisoner" />
         </SwiperSlide>
       </Swiper>
     </>

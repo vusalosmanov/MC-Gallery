@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { AiFillCaretRight } from "react-icons/ai";
-import image from "../assets/images/icon/logo.png"
+import mc_gallery from "../assets/images/icon/logo.png"
 import Swiperss from "../components/Swiper3";
 import Form from "../components/Form";
 const Əlaqə = () => {
@@ -37,7 +37,7 @@ const Əlaqə = () => {
         <div className="border-[#ddd] mb-[20px] border-[1px] rounder mt-[20px] ">
           <div className="p-[15px] text-sm lg:flex lg:justify-around items-center flex flex-wrap ">
             <div className="lg:w-[25%] w-[100%] justify-center flex ">
-              <img src={image} alt="" className="p-[4px] " />
+              <img src={mc_gallery} alt="" className="p-[4px] " />
             </div>
             <div>
               <strong>mgstore.az</strong>

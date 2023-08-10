@@ -1,12 +1,12 @@
 import React from "react";
 import { Swiper, SwiperSlide  } from "swiper/react";
-import image3 from "../assets/images/icon/Philips_logo-178x105.png";
-import image4 from "../assets/images/icon/Samsung-178x105.png";
-import image2 from "../assets/images/icon/Gorenje-178x105.png";
-import image5 from "../assets/images/icon/Sharp-178x105.png";
-import image6 from "../assets/images/icon/Sony-178x105.png";
+import Aeg from "../assets/images/icon/AEG.png";
+import Philips from "../assets/images/icon/Philips.png";
+import Samsung from "../assets/images/icon/Samsung.png";
+import Gorenje from "../assets/images/icon/Gorenje.png";
+import Sharp from "../assets/images/icon/Sharp.png";
+import Sony from "../assets/images/icon/Sony.png";
 import { Autoplay } from "swiper";
-import image1 from "../assets/images/icon/AEG-178x105.png";
 import "../assets/styles/components/Accordion.scss"
 
 const Swiper3 = () => {
@@ -26,57 +26,57 @@ const Swiper3 = () => {
     >
       <SwiperSlide>
         <div className="pt-[1px] pb-[1px] pr-[15px] pl-[15px] w-full flex justify-center hover:scale-[1.1] btn">
-          <img src={image1} alt="" className="flex justify-center " />
+          <img src={Aeg} alt="aeg" className="flex justify-center " />
         </div>
       </SwiperSlide>
       <SwiperSlide>
         <div className="pt-[1px] pb-[1px] pr-[15px] pl-[15px] w-full flex justify-center hover:scale-[1.1] btn ">
-          <img src={image2} alt=""  />
+          <img src={Philips} alt="philips"  />
         </div>
       </SwiperSlide>
       <SwiperSlide>
         <div className="pt-[1px] pb-[1px] pr-[15px] pl-[15px] w-full flex justify-center hover:scale-[1.1]  btn ">
-          <img src={image3} alt="" />
+          <img src={Samsung} alt="samsung" />
         </div>
       </SwiperSlide>
       <SwiperSlide>
         <div className="pt-[1px] pb-[1px] pr-[15px] pl-[15px] w-full flex justify-center hover:scale-[1.1] btn">
-          <img src={image4} alt="" />
+          <img src={Gorenje} alt="gorenje" />
         </div>
       </SwiperSlide>
       <SwiperSlide>
         <div className="pt-[1px] pb-[1px] pr-[15px] pl-[15px] w-full flex justify-center hover:scale-[1.1] btn ">
-          <img src={image5} alt="" />
+          <img src={Sharp} alt="sharp" />
         </div>
       </SwiperSlide>
       <SwiperSlide>
         <div className="pt-[1px] pb-[1px] pr-[15px] pl-[15px] w-full flex justify-center hover:scale-[1.1]  btn">
-          <img src={image6} alt="" />
+          <img src={Sony} alt="sony" />
         </div>
       </SwiperSlide>
       <SwiperSlide>
         <div className="pt-[1px] pb-[1px] pr-[15px] pl-[15px] w-full flex justify-center hover:scale-[1.1] btn ">
-          <img src={image5} alt="" />
+          <img src={Sharp} alt="sharp" />
         </div>
       </SwiperSlide>
       <SwiperSlide>
         <div className="pt-[1px] pb-[1px] pr-[15px] pl-[15px] w-full flex justify-center hover:scale-[1.1] btn ">
-          <img src={image4} alt="" />
+          <img src={Gorenje} alt="gorenje" />
         </div>
       </SwiperSlide>
       <SwiperSlide>
         <div className="pt-[1px] pb-[1px] pr-[15px] pl-[15px] w-full flex justify-center hover:scale-[1.1]  btn ">
-          <img src={image3} alt="" />
+          <img src={Samsung} alt="samsung" />
         </div>
       </SwiperSlide>
       <SwiperSlide>
         <div className="pt-[1px] pb-[1px] pr-[15px] pl-[15px] w-full flex justify-center hover:scale-[1.1]  btn">
-          <img src={image2} alt="" />
+          <img src={Philips} alt="philips" />
         </div>
       </SwiperSlide>
       <SwiperSlide>
         <div className="pt-[1px] pb-[1px] pr-[15px] pl-[15px] w-full flex justify-center hover:scale-[1.1] btn  ">
-          <img src={image1} alt="" />
+          <img src={Aeg} alt="aeg" />
         </div>
       </SwiperSlide>
     </Swiper>

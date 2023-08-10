@@ -2,7 +2,7 @@ import React from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import { TbPageBreak } from "react-icons/tb";
 import { json, Link } from "react-router-dom";
-import image from "../assets/images/icon/sale-old.png";
+import sale from "../assets/images/icon/sale-old.png";
 import { useState } from "react";
 import Swal from "sweetalert2";
 import "../assets/styles/components/productcar.scss";
@@ -67,8 +67,8 @@ export const ProductCard = ({
           <div>
             <span>
               <img
-                src={image}
-                alt=""
+                src={sale}
+                alt="sale"
                 className="w-[70px] absolute top-6 left-[-15px] z-[-99999px] "
               />
             </span>

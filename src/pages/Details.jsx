@@ -3,9 +3,9 @@ import { AiFillCaretRight } from "react-icons/ai";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-import image2 from "../assets/images/icon/phone_icon.png";
-import image1 from "../assets/images/image/stars-0.png";
-import image from "../assets/images/icon/sale-old.png";
+import phone_icon from "../assets/images/icon/phone_icon.png";
+import stars from "../assets/images/image/stars-0.png";
+import sale from "../assets/images/icon/sale-old.png";
 import "../assets/styles/components/Accordion.scss";
 import axios from "axios";
 import Swiper3 from "../components/Swiper3";
@@ -54,8 +54,8 @@ const Details = () => {
           <div className="lg:w-[470px] h-[400px]">
             <span>
               <img
-                src={image}
-                alt=""
+                src={sale}
+                alt="sale"
                 className="w-[70px] absolute top-8 left-[-15px] z-[-99999px]"
               />
             </span>
@@ -72,7 +72,7 @@ const Details = () => {
           <h1 className="text-[33px] text-[#575757]">{product.name}</h1>
           <div className="flex items-center gap-2">
             <div>
-              <img src={image1} alt="" />
+              <img src={stars} alt="stars" />
             </div>
             <span className="text-[#575757] hover:text-[#f15803] cursor-pointer">
               0 şərh
@@ -105,8 +105,8 @@ const Details = () => {
         <div className="lg:block hidden">
           <div className="bg-[#f15803] pt-[14px] pb-[14px] pl-[6px] pr-[6px] text-white absolute top-[120px] right-[45px] flex w-[138px] text-center cursor-pointer border-[5px] justify-center gap-2  animate-shadow-pulse ">
             <img
-              src={image2}
-              alt=""
+              src={phone_icon}
+              alt="phone"
               srcset=""
               className="max-w-[100%] w-[52px] h-[52px]"
             />
