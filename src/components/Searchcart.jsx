@@ -29,7 +29,7 @@ const Searchcart = ({ productName, imageUrl, price, oldprice, id }) => {
             </p>
           </div>
         </div>
-        <div></div>
+       
       </div>
     </div>
   );

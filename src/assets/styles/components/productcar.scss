@@ -1,9 +1,11 @@
 .sliderproduct_main {
   :hover {
     cursor: pointer;
+
     .overlay_for_img {
       display: block;
     }
+
     .products_text {
       display: none;
     }
@@ -12,6 +14,7 @@
       display: block;
     }
   }
+
   .overlay_top {
     width: 100%;
     padding: 1rem;

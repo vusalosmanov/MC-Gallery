@@ -24,15 +24,15 @@ export const ProductCard = ({
   
   const [ likeCount ,setLikeCount] = useState(false);
 
-  const Alert = () => {
-    Swal.fire({
-      position: "top-center",
-      icon: "success",
-      title: "Səbətə əlavə olundu",
-      showConfirmButton: false,
-      timer: 1500,
-    });
-  };
+    const Alert = () => {
+      Swal.fire({
+        position: "top-center",
+        icon: "success",
+        title: "Səbətə əlavə olundu",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    };
 
   const handleButtonClick = () => {
     setButtonClicked(true);
@@ -83,7 +83,7 @@ export const ProductCard = ({
               <div>
                 <span>
                   <img
-                    src={image}
+                    src={sale}
                     alt=""
                     className="w-[70px] absolute top-6 left-[-15px] z-[-99999px] "
                   />

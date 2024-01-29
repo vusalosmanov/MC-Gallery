@@ -3,7 +3,7 @@ import { AiFillCaretRight } from "react-icons/ai";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-import phone_icon from "../assets/images/icon/phone_icon.png";
+  import phone_icon from "../assets/images/icon/phone_icon.png";
 import stars from "../assets/images/image/stars-0.png";
 import sale from "../assets/images/icon/sale-old.png";
 import "../assets/styles/components/Accordion.scss";

@@ -218,7 +218,7 @@ const Header = () => {
         <div className="text-center w-[100%] bg-white">
           <div className="lg:w-[1170px] w-full my-0 mx-auto  pr-[15px] pl-[15px] h-[120px] lg:flex lg:justify-between  lg:items-center flex justify-evenly  items-center  ">
             <div className=" pt-[5px] w-[262px] ml-[7px]">
-              <Link to="/home">
+              <Link nk to="/home">
                 <img
                   src={mc_gallery}
                   alt="mc_gallery"
